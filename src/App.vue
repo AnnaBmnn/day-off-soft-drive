@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <h1>Buy a plant!</h1>
+  <div >
+    <h1>Soft drive </h1>
     <Checkout-Item />
     <Checkout-Payment />
   </div>
@@ -19,13 +19,18 @@ export default {
 </script>
 
 <style>
+body {
+  margin: 0;
+  padding: 0;
+}
 #app {
+  margin: 0;
+  padding: 0;
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  width: 350px;
   margin: auto;
   padding: 20px;
   position: relative;
-  background: #ffffff;
+  background: url('~@/assets/furry-texture.jpeg') repeat;
   text-align: center;
   display: flex;
   flex-direction: column;
