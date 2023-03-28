@@ -66,7 +66,7 @@ export default {
     }
   },
 };
-const CLIENT_ID = 'ASkoIUlM5SvjbQTyg5n2g5ODblSom8Te9QIBCVaMWjTk1IaqJDpEH36zdFFuy5mNCYEfieYV8xg1kHxT';
+const CLIENT_ID = 'AW58-_beMRQuBpj3JGJNkxiqhbDOFIfPqvjThTrVIzk3ChmWVfzU8jX3wLKf2Xg1U2W-9xDgFC35rYqa';
 </script>
 
 <style>
