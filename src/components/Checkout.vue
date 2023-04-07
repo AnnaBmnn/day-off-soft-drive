@@ -10,6 +10,7 @@ export default {
   name: 'Checkout-Payment',
   beforeCreate: function() {
     loadScript({ 'client-id': CLIENT_ID, 'intent': 'authorize' }).then((paypal) => {
+      console.log(paypal)
       paypal
         .Buttons({
           createOrder: this.createOrder,
@@ -31,12 +32,14 @@ export default {
   },
   methods: {
     createOrder: function(data, actions) {
+      console.log(actions)
       console.log('Creating order...');
       return actions.order.create({
         purchase_units: [
           {
             amount: {
               value: this.cartTotal,
+              currency: 'EUR'
             },
           },
         ],

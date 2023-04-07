@@ -11,6 +11,8 @@
   "dependencies": {
     "@paypal/paypal-js": "^5.0.2",
     "core-js": "^3.8.3",
+    "gltf-loader": "^1.0.0",
+    "three": "^0.151.2",
     "vue": "^3.2.13"
   },
   "devDependencies": {
