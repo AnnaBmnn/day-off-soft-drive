@@ -1,14 +1,23 @@
 <template>
   <div >
-    <!-- <ComponentThreejs /> -->
+    <ComponentChangeBackground v-on:onBgChange="onBgChange" />
     <Checkout-Item />
-    <Checkout-Payment />
+
+    <ComponentThreejs />
+
     <!-- <div class="mask"></div> -->
     <ComponentCard />
     <ComponentCard />
-    <ComponentCard />
-    <ComponentCard />
-
+    <ComponentCard>
+      <Checkout-Payment />
+    </ComponentCard >
+    <ComponentCard >
+      <img
+        class="item"
+        src="~@/assets/image8-removebg-preview.png"
+        alt="Gif of a red rose turning and text saying I love you"
+      />
+    </ComponentCard >
   </div>
 </template>
 
@@ -16,15 +25,25 @@
 import CheckoutPayment from './components/Checkout.vue';
 import CheckoutItem from './components/Item.vue';
 import ComponentCard from './components/Card.vue';
-import ComponentThreejs from './components/ComponentThreejs.vue';
+import ComponentChangeBackground from './components/ChangeBg.vue';
+// import ComponentThreejs from './components/ComponentThreejs.vue';
 export default {
   name: 'App',
   components: {
     CheckoutPayment,
     CheckoutItem,
-    ComponentThreejs,
-    ComponentCard
+    // ComponentThreejs,
+    ComponentCard,
+    ComponentChangeBackground
   },
+  methods: {
+    onBgChange(data){
+      const r = document.querySelector(':root');
+      r.style.setProperty('--backgroundUrl', data.src) ;
+      r.style.setProperty('--percentage', data.percentage) ;
+
+    },
+  }
 };
 </script>
 
@@ -34,20 +53,22 @@ body {
   padding: 0;
 }
 #app {
-  min-height: 100vh;
+  font-family: 'Times New Roman', Times, serif;
+  min-height: 300vh;
   margin: 0;
   padding: 0;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   margin: auto;
   padding: 20px;
   position: relative;
-  background:  url(https://media.giphy.com/media/x8Jmfuz6xbVCM/giphy.gif)  ;
-  background-size:  30%;
-  text-align: center;
-  display: flex;
+  background: var(--backgroundUrl);
+  background-size:  var(--percentage);
+  filter: contrast(1.5);
+
+  /* text-align: center; */
+  /* display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
 .mask {
   position: fixed;
@@ -64,4 +85,9 @@ h1 {
   font-size: 62px;
   font-weight: bold;
 }
+:root {
+  --backgroundUrl: url('~@/assets/background/bg-paillettes.webp') ;
+  --percentage: 30%;
+}
+
 </style>

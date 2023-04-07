@@ -1,9 +1,13 @@
 <template>
-<div     @mousedown="onMouseDown"  :style="cssProps"  class="card wizz">
+<div  @mousedown="onMouseDown"  :style="cssProps"  class="card wizz">
   <div class="card__container">
     <header class="card__header">
       <h2 class="card__title">Alerte - Higher bid</h2>
     </header>
+    <div>
+
+      <slot></slot> 
+    </div>
   </div>
 </div>
 </template>
@@ -34,7 +38,7 @@ export default {
     }
   },
   mounted() {
-    this.percentage = (Math.random() * 30) + 10
+    this.percentage = (Math.random() * 40) + 10
     this.translateX = Math.random() * window.innerWidth * 0.7
     this.translateY = Math.random() * window.innerHeight * 0.7
     this.delay = Math.random() * 10
@@ -87,7 +91,7 @@ export default {
   background:  url(https://media.giphy.com/media/x8Jmfuz6xbVCM/giphy.gif);
   background: url('~@/assets/logo-mask.svg') ;
   background-size: var(--percentage);
-  backdrop-filter: blur(100px);
+  backdrop-filter: blur(0px);
   overflow: hidden;
 }
 .card.wizz .card__container{
