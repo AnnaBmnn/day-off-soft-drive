@@ -2,15 +2,14 @@
   <div >
     <ComponentChangeBackground v-on:onBgChange="onBgChange" />
     <Checkout-Item />
-
-    <ComponentThreejs />
-
     <!-- <div class="mask"></div> -->
-    <ComponentCard />
-    <ComponentCard />
+    <ComponentCard >
+      <ComponentThreejs />
+    </ComponentCard>
     <ComponentCard>
       <Checkout-Payment />
     </ComponentCard >
+    <ComponentCardSoftDrive />
     <ComponentCard >
       <img
         class="item"
@@ -26,15 +25,18 @@ import CheckoutPayment from './components/Checkout.vue';
 import CheckoutItem from './components/Item.vue';
 import ComponentCard from './components/Card.vue';
 import ComponentChangeBackground from './components/ChangeBg.vue';
-// import ComponentThreejs from './components/ComponentThreejs.vue';
+import ComponentThreejs from './components/ComponentThreejs.vue';
+import ComponentCardSoftDrive from './components/CardSoftDrive.vue';
+
 export default {
   name: 'App',
   components: {
     CheckoutPayment,
     CheckoutItem,
-    // ComponentThreejs,
+    ComponentThreejs,
     ComponentCard,
-    ComponentChangeBackground
+    ComponentChangeBackground,
+    ComponentCardSoftDrive
   },
   methods: {
     onBgChange(data){
@@ -62,7 +64,7 @@ body {
   position: relative;
   background: var(--backgroundUrl);
   background-size:  var(--percentage);
-  filter: contrast(1.5);
+  /* filter: contrast(1.5); */
 
   /* text-align: center; */
   /* display: flex;

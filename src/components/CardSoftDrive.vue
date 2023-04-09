@@ -2,11 +2,30 @@
 <div  @mousedown="onMouseDown"  :style="cssProps"  class="card wizz">
   <div class="card__container">
     <header class="card__header">
-      <h2 class="card__title">Alerte - Higher bid</h2>
+      <h2 class="card__title">***__**__ * SOFT DRIVE * __**__***</h2>
     </header>
     <div>
-
-      <slot></slot> 
+    <div class="card__main">
+      <div class="card__img-container">
+        <img
+          class="item"
+          src="~@/assets/peluche.png"
+          alt="Gif of a red rose turning and text saying I love you"
+        />  
+      </div>
+      <div class="card__infos">
+        <div class="card__block">
+          <p>Soft-drive, a hard drive with soft content</p>
+        </div>
+        <div class="card__block">
+          <p>
+            You want to fill your heart and your computer with softness, 
+            days off has what you need.
+            By making a bid, you get the change to win 
+          </p>
+        </div>
+      </div>
+      </div>
     </div>
   </div>
 </div>
@@ -15,7 +34,7 @@
 <script>
 
 export default {
-  name: 'Component-Card',
+  name: 'Component-Card-Soft-Drive',
   data() {
     return {
       translateX: 0,
@@ -74,13 +93,14 @@ export default {
   top: 0%;
   left: 0%;
   transform: translate(var(--translateX), var(--translateY));
-  width: 40vw;
-  aspect-ratio: 16/12;
+  width: 75vw;
+  height: 90vh;
   min-width: 350px;
   border-radius: 5px;
   z-index: 20;
   /* resize: both; */
   will-change: transform;
+  z-index: 30;
 }
 .card__container {
   position: absolute;
@@ -88,11 +108,10 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background:  url(https://media.giphy.com/media/x8Jmfuz6xbVCM/giphy.gif);
-  background: url('~@/assets/logo-mask.svg') ;
   background-size: var(--percentage);
-  backdrop-filter: blur(0px);
+  backdrop-filter: blur(8px);
   overflow: hidden;
+  background-color: rgba(71, 143, 200 , 0.8);
 }
 .card.wizz .card__container{
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both var(--delay) 2;
@@ -108,6 +127,19 @@ export default {
   border-radius: 5px;
   z-index: 13;
 }
+.card__container:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 5px;
+  z-index: 0;
+  background-size: contain;
+  background: url('~@/assets/background/bg-ciel.jpg') repeat 30%;
+  opacity: 0.3;
+}
 
 .card__header {
   margin: 0;
@@ -117,6 +149,7 @@ export default {
   position: relative;
   z-index: 12;
 }
+
 .card__title {
   margin: 0;
   padding: 5px 4px 5px 8px;
@@ -125,6 +158,58 @@ export default {
   font-size: 14px;
   font-style: italic;
   text-align: left;
+}
+
+.card__main {
+  padding: 15px;
+  display: flex;
+}
+
+.card__img-container {
+  position: relative;
+  border-radius: 10px;
+  /* box-shadow: 0px 4px 64px 100px #ffffff; */
+  background-color: rgba(71, 143, 200 , 0.8);
+  width: 50%;
+  /* box-shadow: inset -4px -4px 0px #F0F0F0, inset 4px 4px 0px #F0F0F0, inset -4px -4px 0px #B1B1B1, inset 4px 4px 0px #B1B1B1; */
+  /* background: url('~@/assets/background/bg-noise.png') repeat ; */
+  /* border: 4px solid white; */
+}
+.card__img-container:before {
+  content: '';
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  box-shadow: inset 4px 4px 13px #ebebeb; 
+}
+
+.card__img-container img {
+  width: 100%;
+}
+.card__block {
+  max-width: 350px;
+  position: relative;
+  margin: 0 40px 50px;
+  padding: 10px 15px;
+  border-radius: 15px;
+  box-shadow: inset 4px 4px 10px #ebebeb; 
+  backdrop-filter: blur(8px);
+  color: white;
+}
+.card__block:before {
+  /* content: ''; */
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  bottom: -10px;
+  right: -10px;
+  box-shadow: inset 4px 4px 20px #ebebeb; 
+  backdrop-filter: blur(8px);
+  border-radius: 15px;
 }
 
 @keyframes shake {

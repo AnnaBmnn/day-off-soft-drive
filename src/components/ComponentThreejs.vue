@@ -23,9 +23,11 @@ export default {
 
         // Sizes
         this.sizes = {
-            width: window.innerWidth,
-            height: window.innerHeight
+            width: this.$refs.canvas.offsetWidth,
+            height: this.$refs.canvas.offsetHeight
         }
+
+        console.log(this.$refs.canvas.offsetHeight )
 
         // Scene
         this.scene = new THREE.Scene()
@@ -81,9 +83,12 @@ export default {
         // event
         window.addEventListener('resize', () =>
         {
+            //width: this.$refs.canvas.offsetWidth,
+            //height: this.$refs.canvas.offsetHeight
+
             // Update sizes
-            this.sizes.width = window.innerWidth
-            this.sizes.height = window.innerHeight
+            this.sizes.width = this.$refs.canvas.offsetWidth
+            this.sizes.height = this.$refs.canvas.offsetHeight
 
             // Update camera
             this.camera.aspect = this.sizes.width / this.sizes.height
@@ -253,14 +258,14 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 canvas {
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: 10;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
 
 }
 </style>
