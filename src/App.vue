@@ -7,36 +7,36 @@
       <ComponentThreejs />
     </ComponentCard>
     <ComponentCard>
-      <Checkout-Payment />
+      <!-- <Checkout-Payment /> -->
     </ComponentCard >
-    <ComponentCardSoftDrive />
+    <!-- <ComponentCardSoftDrive /> -->
     <ComponentCard >
-      <img
+      <!-- <img
         class="item"
         src="~@/assets/image8-removebg-preview.png"
         alt="Gif of a red rose turning and text saying I love you"
-      />
+      /> -->
     </ComponentCard >
   </div>
 </template>
 
 <script>
-import CheckoutPayment from './components/Checkout.vue';
+// import CheckoutPayment from './components/Checkout.vue';
 import CheckoutItem from './components/Item.vue';
 import ComponentCard from './components/Card.vue';
 import ComponentChangeBackground from './components/ChangeBg.vue';
 import ComponentThreejs from './components/ComponentThreejs.vue';
-import ComponentCardSoftDrive from './components/CardSoftDrive.vue';
+// import ComponentCardSoftDrive from './components/CardSoftDrive.vue';
 
 export default {
   name: 'App',
   components: {
-    CheckoutPayment,
+    // CheckoutPayment,
     CheckoutItem,
     ComponentThreejs,
     ComponentCard,
     ComponentChangeBackground,
-    ComponentCardSoftDrive
+    // ComponentCardSoftDrive
   },
   methods: {
     onBgChange(data){

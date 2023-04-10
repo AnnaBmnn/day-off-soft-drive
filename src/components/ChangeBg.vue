@@ -24,32 +24,32 @@ export default {
       imgs: [
         {
           name: "ciel",
-          src: "url('./background/bg-ciel.jpg')",
+          src: "url('../background/bg-ciel.jpg')",
           percentage: "100%"
         },
         {
           name: "beton",
-          src: "url('./background/bg-beton.jpg')",
+          src: "url('../background/bg-beton.jpg')",
           percentage: "100%"
         },
         {
           name: "jean",
-          src: "url('./background/bg-jean.jpg')",
+          src: "url('../background/bg-jean.jpg')",
           percentage: "100%"
         },
         {
           name: "paillettes",
-          src: "url('./background/bg-paillettes.webp')",
+          src: "url('../background/bg-paillettes.webp')",
           percentage: "30%"
         },
         {
           name: "peluche",
-          src: "url('./background/bg-peluche.jpeg')",
+          src: "url('../background/bg-peluche.jpeg')",
           percentage: "100%"
         },
         {
           name: "Sparkly",
-          src: "url('./background/bg-sparkly.gif')",
+          src: "url('../background/bg-sparkly.gif')",
           percentage: "10%"
         },
       ]
