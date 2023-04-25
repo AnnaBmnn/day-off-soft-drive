@@ -1,11 +1,19 @@
 <template>
-<div  @mousedown="onMouseDown"  :style="cssProps"  class="card wizz">
+<div v-show="openModal" @mousedown="onMouseDown"  :style="cssProps"  class="card wizz">
   <div class="card__container">
     <header class="card__header">
-      <h2 class="card__title">Alerte - Higher bid</h2>
+      <h2 class="card__title">[̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅] Place a bid [̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅] </h2>
+      <button class="window95__button">
+        <div class="window95__button-container">
+          <img
+            class="window95__button-icon"
+            src="~@/assets/icons/icon-close.svg"
+            alt="icon x for closing window"
+          /> 
+        </div>
+      </button>
     </header>
     <div>
-
       <slot></slot> 
     </div>
   </div>
@@ -26,6 +34,7 @@ export default {
     };
   },
   props: {
+    openModal: Boolean
   },
   computed: {
     cssProps() {
@@ -48,13 +57,12 @@ export default {
   },
   methods: {
     onMouseDown(e){
-      e.preventDefault()
+      // e.preventDefault()
       this.offsetX = e.offsetX
       this.offsetY = e.offsetY
       this.isDrag = true
     },
     onMouseUp(){
-      console.log('mouse up')
       this.isDrag = false
     },
     onDrag(e){
@@ -78,7 +86,7 @@ export default {
   aspect-ratio: 16/12;
   min-width: 350px;
   border-radius: 5px;
-  z-index: 20;
+  z-index: 22;
   /* resize: both; */
   will-change: transform;
 }
@@ -88,14 +96,14 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background:  url(https://media.giphy.com/media/x8Jmfuz6xbVCM/giphy.gif);
-  background: url('~@/assets/logo-mask.svg') ;
+  /* background:  url(https://media.giphy.com/media/x8Jmfuz6xbVCM/giphy.gif); */
+  /* background: url('~@/assets/logo-mask.svg') ; */
   background-size: var(--percentage);
-  backdrop-filter: blur(0px);
+  backdrop-filter: blur(10px);
   overflow: hidden;
 }
 .card.wizz .card__container{
-  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both var(--delay) 2;
+  /* animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both var(--delay) 2; */
 }
 .card__container:after {
   content: '';
@@ -105,8 +113,9 @@ export default {
   bottom: 0;
   right: 0;
   box-shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px 0px #7E7E7E, inset 4px 4px 0px #B1B1B1;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   z-index: 13;
+  pointer-events: none;
 }
 
 .card__header {
@@ -116,6 +125,8 @@ export default {
   background: #C4C4C4;
   position: relative;
   z-index: 12;
+  display: flex;
+  justify-content: space-between;
 }
 .card__title {
   margin: 0;

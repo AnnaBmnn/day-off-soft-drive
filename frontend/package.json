@@ -1,26 +1,19 @@
 {
-  "name": "vue-integration",
+  "name": "frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "start": "npm run serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "@apollo/client": "^3.7.12",
-    "@paypal/paypal-js": "^5.0.2",
     "@vue/apollo-option": "^4.0.0-beta.4",
     "core-js": "^3.8.3",
-    "global": "^4.4.0",
-    "gltf-loader": "^1.0.0",
     "graphql": "^16.6.0",
     "graphql-tag": "^2.12.6",
-    "three": "^0.151.2",
-    "vue": "^3.2.13",
-    "vue-cli": "^2.9.6",
-    "vue-router": "^4.1.6"
+    "vue": "^3.2.13"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
