@@ -28,8 +28,8 @@
     "template": "@strapi/template-blog@1.0.0"
   },
   "engines": {
-    "node": ">=14.19.1",
-    "npm": ">=6.0.0"
+    "node": "v18.15.0",
+    "npm": "9.5.0"
   },
   "license": "MIT"
 }
