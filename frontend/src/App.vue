@@ -250,7 +250,7 @@ h1 {
   font-weight: bold;
 }
 :root {
-  --backgroundUrl: url('~@/assets/background/bg-paillettes.webp') ;
+  --backgroundUrl: url('~@/assets/background/bg-ciel.jpg') ;
   --percentage: 30%;
 }
 
