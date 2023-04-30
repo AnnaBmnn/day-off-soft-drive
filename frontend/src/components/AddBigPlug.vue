@@ -1,5 +1,5 @@
 <template>
-  <div ref="container"  :style="cssProps" class="add-big" @scroll="onScroll">
+  <div ref="container"  :style="cssProps" class="add-big-plus" @scroll="onScroll">
     <div class="add-big__text">
         Plug it or hug it
     </div>
@@ -28,7 +28,6 @@ export default {
     for(let i = 0; i < 1001; i ++){
       threshold.push(i / 1000)
     }
-    console.log(document.querySelector(".window95"))
     let options = {
       root: document.querySelector(".window95__content-container"),
       rootMargin: "0px",
@@ -37,7 +36,7 @@ export default {
     let callback = (entries) => {
       entries.forEach((entry) => {
         console.log(entry)
-        this.ratio = entry.intersectionRatio * 3.3
+        this.ratio = entry.intersectionRatio * 2.0
         // Each entry describes an intersection change for one observed
         // target element:
         //   entry.boundingClientRect
@@ -50,7 +49,7 @@ export default {
       });
     };
     let observer = new IntersectionObserver(callback, options);
-    let target = document.querySelector(".add-big");
+    let target = document.querySelector(".add-big-plus");
     observer.observe(target);
   },
   methods: {
@@ -62,11 +61,11 @@ export default {
 </script>
 
 <style scoped>
-.add-big {
+.add-big-plus {
   overflow: hidden;
   /* top: 0;
   position: sticky; */
-  color: yellow;
+  color: transparent;
   height: 150vh;
   width: 100%;
 }
@@ -78,7 +77,9 @@ export default {
   text-transform: uppercase;
   letter-spacing: -0.8vw;
   transform-origin: top;
-  text-shadow: 2px 2px 0 #FF0000, 6px 6px 8px #FFFF00;
+  text-shadow: 0px 0px 10px white;
+
+  /* text-shadow: 2px 2px 0 white, 6px 6px 8px white; */
   line-height: 0.86;
   will-change: transform;
   transform: scaleY(var(--scale));

@@ -32,7 +32,7 @@ export default {
 
 <style scoped>
 .marquee__container {
-  opacity: 0;
+  /* opacity: 0; */
   height: 100px;
   overflow: hidden;
   width: 100vw;

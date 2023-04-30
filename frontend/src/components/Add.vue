@@ -40,7 +40,7 @@ export default {
     this.translateX = Math.random() * window.innerWidth * 0.3 + 15
     this.translateY = Math.random() * scrollContent.scrollHeight * 0.90 + 5
     this.rotate = Math.random() * 50 - 25
-    this.scale = Math.random() * 5.0 
+    this.scale = Math.random() * 3.0 
 
     window.setInterval(()=> {
 
@@ -51,7 +51,7 @@ export default {
       console.log(window)
       }, 350)
       window.setTimeout(() => {
-        this.scale = Math.random() * 5.0
+        this.scale = Math.random() * 3.0
       }, 650)
 
     }, Math.random() * 8000 + 5000)
@@ -69,7 +69,7 @@ export default {
   font-family: sans-serif;
   text-transform: uppercase;
   transform: translate(var(--translateX), var(--translateY)) rotate(var(--rotate)) scale(var(--scale));
-  filter: blur(0px);
+  filter: blur(1px);
   transition: filter 0.1s linear, transform 0.3s  cubic-bezier(.34,1.56,.6,1.3);
 }
 /* 

@@ -33,16 +33,32 @@ export default {
     }
   },
   mounted() {
+    const scrollContent = document.querySelector('.window95__content-container')
+
     this.translateY = Math.random() * window.innerHeight * 0.90 + 5
     this.translateX = Math.random() * window.innerWidth * 0.8
-    this.duration = Math.random() * 5
+    this.duration = Math.random() * 3
+
+    window.setInterval(()=> {
+
+      this.scale = 0
+      window.setTimeout(() => {
+      this.translateX = Math.random() * window.innerWidth 
+      this.translateY = Math.random() * scrollContent.scrollHeight * 0.90 + 5
+      console.log(window)
+      }, 350)
+      window.setTimeout(() => {
+        this.scale = Math.random() * 3.0
+      }, 650)
+
+    }, Math.random() * 8000 + 8000)
   },
 };
 </script>
 
 <style scoped>
 .price {
-  position: fixed;
+  position: absolute;
   left: var(--translateX);
   top: var(--translateY);
   width: 250px;

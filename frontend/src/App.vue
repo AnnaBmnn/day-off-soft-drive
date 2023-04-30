@@ -1,13 +1,14 @@
 <template>
   <div>
-    <ComponentChangeBackground v-on:onBgChange="onBgChange" />
     <Checkout-Item />
 
     <!-- <div class="mask"></div> -->
-    <ComponentCard :openModal="openModal">
+    <ComponentCard @closeModalEvent="this.openModal = false" title="[̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅] Place a bid [̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]" :openModal="openModal">
       <Checkout-Payment :minAmount="bid" v-on:onHigherBid="updateBidAmount"  />
     </ComponentCard>
-    <ComponentWindow95 >
+    <ComponentWindow95  >
+      <ComponentChangeBackground v-on:onBgChange="onBgChange" />
+
       <ComponentPrice :priceValue="bid" />
       <ComponentAdd @openModalEvent="this.openModal = true" />
       <ComponentPrice :priceValue="bid" />
@@ -28,6 +29,8 @@
       <ComponentAdd @openModalEvent="this.openModal = true" />
       <ComponentAdd @openModalEvent="this.openModal = true" />
       <ComponentAdd @openModalEvent="this.openModal = true" />
+
+      <SectionContent />
 
       <ComponentMarquee  /> 
       <ComponentMarquee  /> 
@@ -56,6 +59,7 @@ import ComponentAdd from './components/Add.vue';
 import ComponentAddBig from './components/AddBig.vue';
 import AddBigPlug from './components/AddBigPlug.vue';
 import ComponentMarquee from './components/Marquee.vue';
+import SectionContent from './components/SectionContent.vue';
 
 import gql from "graphql-tag";
 
@@ -73,7 +77,8 @@ export default {
     ComponentAdd,
     ComponentAddBig,
     AddBigPlug,
-    ComponentMarquee
+    ComponentMarquee,
+    SectionContent
     // ComponentCardSoftDrive
   },
   computed: {
@@ -82,7 +87,7 @@ export default {
     return {
       bid: 0,
       homepage: [],
-      openModal: false
+      openModal: true
     };
   },
   watch: {
@@ -219,8 +224,8 @@ div {
   margin: 0;
   padding: 0;
   position: relative;
-  background: var(--backgroundUrl);
-  background-size:  var(--percentage);
+  /* background: var(--backgroundUrl); */
+  /* background-size:  var(--percentage); */
   /* filter: contrast(1.5); */
 
   /* text-align: center; */

@@ -84,7 +84,13 @@ export default {
   },
 };
 </script>
+<style >
+.window95__content-container {
+  background: var(--backgroundUrl);
+  background-size:  var(--percentage);
+}
 
+</style>
 <style scoped>
 .window95 {
   font-family: 'W95FA';
@@ -162,8 +168,8 @@ export default {
 }
 
 .window95__content-container {
-  background: url('~@/assets/background/bg-ciel.jpg');
-  background-size: 120%;
+  /* background: url('~@/assets/background/bg-ciel.jpg'); */
+  /* background-size: 120%; */
   position: relative;
   height: calc(100% - 80px);
   overflow: scroll;

@@ -25,7 +25,7 @@ export default {
         {
           name: "ciel",
           src: "url('../background/bg-ciel.jpg')",
-          percentage: "100%"
+          percentage: "120%"
         },
         {
           name: "beton",
@@ -40,7 +40,7 @@ export default {
         {
           name: "paillettes",
           src: "url('../background/bg-paillettes.webp')",
-          percentage: "30%"
+          percentage: "50%"
         },
         {
           name: "peluche",

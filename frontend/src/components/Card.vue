@@ -1,19 +1,19 @@
 <template>
-<div v-show="openModal" @mousedown="onMouseDown"  :style="cssProps"  class="card wizz">
+<div v-show="openModalData" @mousedown="onMouseDown"  :style="cssProps"  class="card wizz">
   <div class="card__container">
     <header class="card__header">
-      <h2 class="card__title">[̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅] Place a bid [̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅] </h2>
-      <button class="window95__button">
-        <div class="window95__button-container">
+      <h2 class="card__title">{{title}} </h2>
+      <button class="card__button" @click="onClick">
+        <div class="card__button-container">
           <img
-            class="window95__button-icon"
+            class="card__button-icon"
             src="~@/assets/icons/icon-close.svg"
             alt="icon x for closing window"
           /> 
         </div>
       </button>
     </header>
-    <div>
+    <div class="card__content">
       <slot></slot> 
     </div>
   </div>
@@ -31,10 +31,19 @@ export default {
       percentage: 0,
       delay: 0,
       isDrag: false,
+      openModalData: false
     };
   },
   props: {
-    openModal: Boolean
+    openModal: Boolean,
+    title: String
+  },
+  watch: {
+    openModal(newValue, oldValue){
+      if(newValue !== oldValue){
+        this.openModalData = newValue
+      }
+    }
   },
   computed: {
     cssProps() {
@@ -47,6 +56,7 @@ export default {
     }
   },
   mounted() {
+    this.openModalData = this.openModal
     this.percentage = (Math.random() * 40) + 20
     this.translateX = Math.random() * window.innerWidth * 0.7
     this.translateY = Math.random() * window.innerHeight * 0.7
@@ -56,6 +66,10 @@ export default {
 
   },
   methods: {
+    onClick(){
+      this.openModalData = false
+      this.$emit('closeModalEvent')
+    },
     onMouseDown(e){
       // e.preventDefault()
       this.offsetX = e.offsetX
@@ -83,11 +97,11 @@ export default {
   left: 0%;
   transform: translate(var(--translateX), var(--translateY));
   width: 40vw;
-  aspect-ratio: 16/12;
   min-width: 350px;
+  min-height: 450px;
   border-radius: 5px;
   z-index: 22;
-  /* resize: both; */
+  resize: both;
   will-change: transform;
 }
 .card__container {
@@ -117,7 +131,9 @@ export default {
   z-index: 13;
   pointer-events: none;
 }
-
+.card__content {
+  height: fit-content;
+}
 .card__header {
   margin: 0;
   font-family: 'Times New Roman', Times, serif;
