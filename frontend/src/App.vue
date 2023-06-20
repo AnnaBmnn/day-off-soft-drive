@@ -37,11 +37,12 @@
       <ComponentAddBig  />
 
       <AddBigPlug  />
-      <img
+      <ComponentThreejs class="window95__img" />
+      <!-- <img
         class="window95__img"
         src="~@/assets/peluche.png"
         alt="Gif of a red rose turning and text saying I love you"
-      />
+      /> -->
     </ComponentWindow95>
     <!-- <ComponentCardSoftDrive /> -->
   </div>
@@ -52,7 +53,7 @@ import CheckoutPayment from './components/Checkout.vue';
 import CheckoutItem from './components/Item.vue';
 import ComponentCard from './components/Card.vue';
 import ComponentChangeBackground from './components/ChangeBg.vue';
-//import ComponentThreejs from './components/ComponentThreejs.vue';
+import ComponentThreejs from './components/ComponentThreejs.vue';
 import ComponentWindow95 from './components/Window95.vue';
 import ComponentPrice from './components/Price.vue';
 import ComponentAdd from './components/Add.vue';
@@ -78,7 +79,8 @@ export default {
     ComponentAddBig,
     AddBigPlug,
     ComponentMarquee,
-    SectionContent
+    SectionContent,
+    ComponentThreejs
     // ComponentCardSoftDrive
   },
   computed: {
@@ -255,9 +257,9 @@ h1 {
 }
 
 .window95__img {
-  pointer-events: none;
+  /* pointer-events: none; */
   position: fixed;
-  z-index: 3;
+  z-index: -3;
   top: 0;
   left: 0;
 }

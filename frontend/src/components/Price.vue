@@ -45,7 +45,6 @@ export default {
       window.setTimeout(() => {
       this.translateX = Math.random() * window.innerWidth 
       this.translateY = Math.random() * scrollContent.scrollHeight * 0.90 + 5
-      console.log(window)
       }, 350)
       window.setTimeout(() => {
         this.scale = Math.random() * 3.0

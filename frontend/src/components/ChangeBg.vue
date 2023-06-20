@@ -1,5 +1,5 @@
 <template>
-<div  :style="cssProps" >
+<div class="change-bg" :style="cssProps" >
   <ComponentChangeBackgroundItem 
     v-for="item in imgs" 
     :key="item.name" 
@@ -22,6 +22,11 @@ export default {
   data() {
     return {
       imgs: [
+        {
+          name: "Bear",
+          src: "url('../background/texture.jpg')",
+          percentage: "10%"
+        },
         {
           name: "ciel",
           src: "url('../background/bg-ciel.jpg')",
@@ -52,6 +57,7 @@ export default {
           src: "url('../background/bg-sparkly.gif')",
           percentage: "10%"
         },
+
       ]
     };
   },
@@ -76,5 +82,8 @@ export default {
 </script>
 
 <style>
-
+.change-bg {
+  z-index: 10;
+  position: relative;
+}
 </style>

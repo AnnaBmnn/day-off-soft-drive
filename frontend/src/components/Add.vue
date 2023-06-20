@@ -48,7 +48,6 @@ export default {
       window.setTimeout(() => {
       this.translateX = Math.random() * window.innerWidth * 0.3 + 15
       this.translateY = Math.random() * scrollContent.scrollHeight * 0.90 + 5
-      console.log(window)
       }, 350)
       window.setTimeout(() => {
         this.scale = Math.random() * 3.0
@@ -84,7 +83,7 @@ export default {
   /* font-style: italic; */
   font-weight: 800;
   color: red;
-  background-color: yellow;
+  background-color: #ffed77;
   letter-spacing: -3px;
   transform: scaleY(2.5);
 }
