@@ -40,7 +40,7 @@ export default {
     )
     this.translateY = Math.random() * scrollHeight 
     this.translateX = Math.random() * window.innerWidth
-    this.duration = Math.random() * 3
+    this.duration = Math.random() * 3 + 1
 
     window.setInterval(()=> {
 

@@ -1,14 +1,14 @@
 <template>
 <div>
     <button :class="`item-folder ${openModal ? 'blur' : ''}`" @click="this.openModal = true">
-        <img src="~@/assets/folder-heart.png">
+        <img class="item-folder__icon" src="~@/assets/folder-heart.png">
         <div class="item-folder__title">My soft drive</div>
     </button>
     <ComponentCard title="My soft drive" :openModal="openModal" @closeModalEvent="this.openModal = false">
         <div :class="`item-folder__card ${backgroundData}`">
-            <div class="item-folder__text">
+            <!-- <div class="item-folder__text">
                 Launching the unhardest hard disk on the market. An external HDD shaped as an extremely tender teddy bear, lovingly crafted in Tokyo, that comes fulfilled with ultra cheezy files:
-            </div>
+            </div> -->
             <div class="item-folder__content">
                 <div class="item-folder--inner" @mouseenter="backgroundData = 'hannaMontana'" @mouseleave="backgroundData = null">
                     <img class="item-folder__img" src="~@/assets/pixel-heart.png">
@@ -188,6 +188,9 @@ export default {
 
 .item-folder__img {
     width: 36px;
+}
+.item-folder__icon {
+    animation: rotate 10000ms ease-in-out infinite; 
 
 }
 .item-folder__text {
@@ -200,5 +203,14 @@ export default {
     text-transform: uppercase;
     color: white;
     margin-bottom: 18px;
+}
+
+@keyframes rotate {
+  0%{
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform:  rotateY(360deg);
+  }
 }
 </style>

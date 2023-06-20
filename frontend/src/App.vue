@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main">
     <Checkout-Item />
 
     <!-- <div class="mask"></div> -->
@@ -8,37 +8,29 @@
     </ComponentCard>
     <ComponentWindow95  >
     </ComponentWindow95>
-    
-    <ComponentChangeBackground v-on:onBgChange="onBgChange" />
 
-    <ComponentPrice :priceValue="bid" />
-    <ComponentAdd @openModalEvent="this.openModal = true" />
-    <ComponentPrice :priceValue="bid" />
-    <ComponentAdd @openModalEvent="this.openModal = true" />
-    <ComponentPrice :priceValue="bid" />
-    <ComponentAdd @openModalEvent="this.openModal = true" />
-    <ComponentPrice :priceValue="bid" />
-    <ComponentAdd @openModalEvent="this.openModal = true" />
-    <ComponentPrice :priceValue="bid" />
-    <ComponentAdd @openModalEvent="this.openModal = true" />
+    <ComponentChangeBackground v-on:onBgChange="onBgChange" />
+    <!-- <ComponentPrice :priceValue="bid" />
     <ComponentPrice :priceValue="bid" />
     <ComponentPrice :priceValue="bid" />
-    <ComponentPrice :priceValue="bid" />
-    <ComponentPrice :priceValue="bid" />
-    <ComponentAdd @openModalEvent="this.openModal = true" />
-    <ComponentPrice :priceValue="bid" />
-    <ComponentAdd @openModalEvent="this.openModal = true" />
-    <ComponentAdd @openModalEvent="this.openModal = true" />
-    <ComponentAdd @openModalEvent="this.openModal = true" />
-    <ComponentAdd @openModalEvent="this.openModal = true" />
+    <ComponentPrice :priceValue="bid" /> -->
+    <!-- <ComponentAdd @openModalEvent="this.openModal = true" /> -->
+    <!-- <ComponentPrice :priceValue="bid" /> -->
+    <!-- <ComponentAdd @openModalEvent="this.openModal = true" /> -->
+    <!-- <ComponentPrice :priceValue="bid" /> -->
+
+    <!-- <ComponentAdd @openModalEvent="this.openModal = true" /> -->
+    <!-- <ComponentPrice :priceValue="bid" /> -->
+    <ComponentAddBig  />
+
+    <Hero />
 
     <SectionContent />
 
-    <ComponentMarquee  /> 
-    <ComponentMarquee  /> 
-    <ComponentAddBig  />
+    <!-- <ComponentMarquee  />  -->
+    <!-- <ComponentMarquee  />  -->
+    <!-- <ComponentAddBig  /> -->
 
-    <AddBigPlug  />
     <ComponentThreejs class="window95__img" />
       <!-- <img
         class="window95__img"
@@ -57,12 +49,13 @@ import ComponentCard from './components/Card.vue';
 import ComponentChangeBackground from './components/ChangeBg.vue';
 import ComponentThreejs from './components/ComponentThreejs.vue';
 import ComponentWindow95 from './components/Window95.vue';
-import ComponentPrice from './components/Price.vue';
-import ComponentAdd from './components/Add.vue';
+// import ComponentPrice from './components/Price.vue';
+// import ComponentAdd from './components/Add.vue';
 import ComponentAddBig from './components/AddBig.vue';
-import AddBigPlug from './components/AddBigPlug.vue';
-import ComponentMarquee from './components/Marquee.vue';
+// import AddBigPlug from './components/AddBigPlug.vue';
+// import ComponentMarquee from './components/Marquee.vue';
 import SectionContent from './components/SectionContent.vue';
+import Hero from './components/Hero.vue';
 
 import gql from "graphql-tag";
 
@@ -76,13 +69,14 @@ export default {
     ComponentCard,
     ComponentChangeBackground,
     ComponentWindow95,
-    ComponentPrice,
-    ComponentAdd,
+    // ComponentPrice,
+    // ComponentAdd,
     ComponentAddBig,
-    AddBigPlug,
-    ComponentMarquee,
+    // AddBigPlug,
+    // ComponentMarquee,
     SectionContent,
-    ComponentThreejs
+    ComponentThreejs,
+    Hero
     // ComponentCardSoftDrive
   },
   computed: {
@@ -208,6 +202,11 @@ body {
 }
 div {
   box-sizing: border-box;
+}
+.main {
+  width: 100vw;
+  overflow-x: hidden;
+  position: relative;
 }
 .presentation {
   position: relative;

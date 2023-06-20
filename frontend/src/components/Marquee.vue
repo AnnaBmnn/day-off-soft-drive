@@ -57,7 +57,7 @@ export default {
   z-index: -1;
   font-size: 5vw;
   color: white;
-  filter: blur(5px);
+  filter: blur(2px);
   /* text-shadow: 0px 0px 7px #ffffff; */
 }
 .marquee--2 {

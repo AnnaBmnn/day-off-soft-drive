@@ -1,6 +1,6 @@
 <template>
 <div>
-  <header :style="cssProps" class="window95__header wizz">
+  <header :style="cssProps" class="window95__header ">
     <div>
       <h2 class="window95__title">[̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅] The soft drive [̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]</h2>
     </div>
@@ -39,6 +39,9 @@
   <div class="bar bar--left"></div>
   <div class="bar bar--right"></div>
   <div class="bar bar--bottom"></div>
+  <div class="window95__bg wizz">
+
+  </div>
 </div>
 </template>
 
@@ -50,7 +53,7 @@ export default {
     return {
       translateX: 0,
       translateY: 0,
-      percentage: 0,
+      percentageBg: 100,
       delay: 0,
       isDrag: false,
     };
@@ -63,7 +66,7 @@ export default {
       return {
         '--translateX': (this.translateX ) + "px",
         '--translateY': this.translateY + "px",
-        '--percentage': this.percentage + "%",
+        '--percentageBg': this.percentageBg + "%",
         '--delay': this.delay + "s",
       }
     }
@@ -81,15 +84,14 @@ export default {
   },
 };
 </script>
-<style >
-body{
+<style scoped>
+
+.window95__bg {
   background: var(--backgroundUrl);
   background-size:  var(--percentage);
-  
 }
-
 </style>
-<style >
+<style scoped >
 .window95.wizz {
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both var(--delay) 2;
 }
@@ -273,6 +275,15 @@ body {
   background: rgba(126, 126, 126, 1);
 }
 
+.window95__bg {
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--backgroundUrl);
+  background-size:  120%;
+}
 
 
 @keyframes shake {

@@ -1,8 +1,7 @@
 <template>
   <div ref="container"  :style="cssProps" class="add-big" @scroll="onScroll">
-    <div class="add-big__text">
-        Bid on it !
-    </div>
+    <img src="~@/assets/official/soft-drive.png" alt="" class="add-big__logo">
+
   </div>
 </template>
 
@@ -11,7 +10,7 @@ export default {
   name: 'Component-Add-Big',
   data() {
     return {
-      ratio: 0
+      ratio: 1
     };
   },
   props: {
@@ -25,19 +24,17 @@ export default {
   },
   mounted() {
     const threshold = []
-    for(let i = 0; i < 1001; i ++){
-      threshold.push(i / 1000)
+    for(let i = 0; i < 201; i ++){
+      threshold.push(i / 200)
     }
-    console.log(document.querySelector(".window95"))
     let options = {
-      root: document.querySelector(".window95__content-container"),
       rootMargin: "0px",
       threshold: threshold,
     };
     let callback = (entries) => {
       entries.forEach((entry) => {
         console.log(entry)
-        this.ratio = entry.intersectionRatio * 3.3
+        this.ratio = 1 + entry.intersectionRatio * 2
         // Each entry describes an intersection change for one observed
         // target element:
         //   entry.boundingClientRect
@@ -50,7 +47,7 @@ export default {
       });
     };
     let observer = new IntersectionObserver(callback, options);
-    let target = document.querySelector(".add-big");
+    let target = document.querySelector(".add-big__logo");
     observer.observe(target);
   },
   methods: {
@@ -64,28 +61,25 @@ export default {
 <style scoped>
 .add-big {
   pointer-events: none;
-  /* overflow: hidden; */
-  /* top: 0; */
-  /* position: sticky;  */
-  /* padding-top: 100vh; */
-  color: transparent;
-  height: 140vh;
+  position: relative;
+  /* overflow: scroll; */
+  top: 0;
+  position: sticky; 
+  padding-top: 64px;
+  height: 200vh;
   width: 100%;
-  z-index: -1;
+  /* z-index: -1; */
 }
 .add-big__text {
+
+}
+.add-big__logo {
   /* top: 0vh; */
   /* position: sticky; */
-  font-size: 26.3vw;
-  text-transform: uppercase;
-  letter-spacing: -0.8vw;
   transform-origin: top;
-  text-shadow: 0px 0px 10px white;
-  line-height: 0.86;
+  width: 100vw;
+  /* height: 100vh; */
   will-change: transform;
   transform: scaleY(var(--scale));
-  /* filter: blur(2px); */
-  /* background-color: black; */
-  transition: transform 0.02s linear;
 }
 </style>

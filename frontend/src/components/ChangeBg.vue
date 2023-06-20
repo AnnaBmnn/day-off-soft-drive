@@ -25,7 +25,7 @@ export default {
         {
           name: "Bear",
           src: "url('../background/texture.jpg')",
-          percentage: "10%"
+          percentage: "100%"
         },
         {
           name: "ciel",
@@ -84,6 +84,7 @@ export default {
 <style>
 .change-bg {
   z-index: 10;
-  position: relative;
+  position: fixed;
+  bottom: 20px;
 }
 </style>

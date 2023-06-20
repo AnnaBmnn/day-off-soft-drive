@@ -70,7 +70,7 @@ export default {
   font-family: sans-serif;
   text-transform: uppercase;
   transform: translate(var(--translateX), var(--translateY)) rotate(var(--rotate)) scale(var(--scale));
-  filter: blur(1px);
+  filter: blur(0px);
   transition: filter 0.1s linear, transform 0.3s  cubic-bezier(.34,1.56,.6,1.3);
 }
 /* 
@@ -84,8 +84,8 @@ export default {
   font-size: 36px;
   /* font-style: italic; */
   font-weight: 800;
-  color: #fea5d2;
-  background-color: #ffed77;
+  color: red;
+  background-color: yellow;
   letter-spacing: -3px;
   transform: scaleY(2.5);
 }
@@ -111,8 +111,8 @@ export default {
   /* color: yellow; */
   font-style: italic;
   /* background-color: red; */
-  background-color: #fea5d2;
-  color: #ffed77;
+  background-color: red;
+  color: yellow;
   align-items: baseline;
   transform: translateY(15px);
 }
