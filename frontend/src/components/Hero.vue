@@ -2,10 +2,14 @@
 <section  :style="cssProps"  class="section-hero">
   <img src="~@/assets/official/soft-drive.png" alt="" class="section-hero__logo">
     <div class="section-hero__text">
+      <img src="~@/assets/official/pink_star.png" alt="" class="section-hero__deco--1">
+
       Launching the unhardest hard disk on the market. 
       An external HDD shaped as an extremely tender teddy bear, 
       lovingly crafted in Tokyo, that comes fulfilled with 
       ultra cheezy files:
+      <img src="~@/assets/official/stars.png" alt="" class="section-hero__deco--2">
+
     </div>
 </section>
 </template>
@@ -57,11 +61,12 @@ export default {
   /* position: absolute; */
   width: 65%;
   margin-left: auto;
-  /* animation: rotate 100000ms ease-in-out infinite; */
 }
 
 .section-hero__text {
-  margin-top: 15px;
+  position: relative;
+  margin-top: 15vh;
+  margin-bottom: 15vh;
   text-transform: uppercase;
   color: white;
   width: 37%;
@@ -71,12 +76,29 @@ export default {
   mix-blend-mode: difference;
 }
 
+.section-hero__deco--1 {
+  position: absolute;
+  width: 7vw;
+  top: 0%;
+  left: 100%;
+  transform: translate(-25%, -80%);
+  animation: rotate 10000ms ease-in-out infinite;
+}
+
+.section-hero__deco--2 {
+  position: absolute;
+  width: 7vw;
+  top: 175%;
+  right: 100%;
+  transform: translate(0%, -80%);
+}
+
 @keyframes rotate {
   0%{
-    transform: rotateY(0deg);
+    transform: translate(-25%, -80%) rotateY(0deg);
   }
   100% {
-    transform:  rotateY(360deg);
+    transform: translate(-25%, -80%) rotateY(-360deg);
   }
 }
 </style>

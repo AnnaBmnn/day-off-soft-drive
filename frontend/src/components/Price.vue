@@ -1,5 +1,5 @@
 <template>
-  <div class="price" :style="cssProps">
+  <div class="price" ref="price" :style="cssProps">
     <div class="price__text">
       <div class="price__subtext">now for</div>
       {{priceValue}}<sup>€</sup>
@@ -17,7 +17,8 @@ export default {
     return {
       translateX: 0,
       translateY: 0,
-      duration: 10
+      duration: 10,
+      scale: 1
     };
   },
   props: {
@@ -29,6 +30,7 @@ export default {
         '--translateX': this.translateX + "px",
         '--translateY': this.translateY + "px",
         '--duration': this.duration + "s",
+        '--scale': this.scale
       }
     }
   },
@@ -41,6 +43,13 @@ export default {
     this.translateY = Math.random() * scrollHeight 
     this.translateX = Math.random() * window.innerWidth
     this.duration = Math.random() * 3 + 1
+    this.scale = Math.random() * 1 + 1
+
+    if(this.scale % 2 === 0){
+      this.$refs.price.classList.add('fixed')
+    } else {
+      this.$refs.price.classList.remove('fixed')
+    }
 
     window.setInterval(()=> {
 
@@ -50,10 +59,15 @@ export default {
       this.translateY = Math.random() * scrollHeight
       }, 350)
       window.setTimeout(() => {
-        this.scale = Math.random() * 3.0
+        this.scale = Math.random() * 1 + 1
+        if(this.scale % 2 === 0){
+          this.$refs.price.classList.add('fixed')
+        } else {
+          this.$refs.price.classList.remove('fixed')
+        }
       }, 650)
 
-    }, Math.random() * 8000 + 8000)
+    }, Math.random() * 20000 + 8000)
   },
 };
 </script>
@@ -68,6 +82,9 @@ export default {
   animation: rotate var(--duration) ease-in-out infinite;
   pointer-events: none;
   /* transform: translate(var(--translateX), var(--translateY)) rotate(var(--rotate)); */
+}
+.price.fixed {
+  position: fixed;
 }
 .price__text {
   position: absolute;
@@ -106,10 +123,10 @@ img {
 
 @keyframes rotate {
   0%{
-    transform: rotateY(0deg);
+    transform: scale(var(--scale)) rotateY(0deg);
   }
   100% {
-    transform:  rotateY(360deg);
+    transform: scale(var(--scale)) rotateY(360deg);
   }
 }
 </style>

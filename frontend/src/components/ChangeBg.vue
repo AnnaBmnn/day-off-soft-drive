@@ -33,11 +33,6 @@ export default {
           percentage: "120%"
         },
         {
-          name: "beton",
-          src: "url('../background/bg-beton.jpg')",
-          percentage: "100%"
-        },
-        {
           name: "jean",
           src: "url('../background/bg-jean.jpg')",
           percentage: "100%"
@@ -47,17 +42,6 @@ export default {
           src: "url('../background/bg-paillettes.webp')",
           percentage: "50%"
         },
-        {
-          name: "peluche",
-          src: "url('../background/bg-peluche.jpeg')",
-          percentage: "100%"
-        },
-        {
-          name: "Sparkly",
-          src: "url('../background/bg-sparkly.gif')",
-          percentage: "10%"
-        },
-
       ]
     };
   },

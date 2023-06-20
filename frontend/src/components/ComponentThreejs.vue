@@ -127,7 +127,7 @@ export default {
                     // this.gltf.material.wireframe = false
                     // this.gltf.rotation.x = Math.PI * 0.5
                     this.gltf.rotation.y = -Math.PI * 1.5
-                    this.gltf.scale.set(2, 2, 2)
+                    this.gltf.scale.set(2.5, 2.5, 2.5)
                     this.scene.add(this.gltf)
                 },
                 (progress) =>
@@ -185,7 +185,7 @@ export default {
 
             // Animate typo
             if(this.gltf){
-                this.gltf.rotation.y += 0.001
+                this.gltf.rotation.y -= 0.0018
                 this.gltf.rotation.z += 0.0001
                 // this.gltf.children[0].scale.y = Math.abs(Math.sin(elapsedTime)) * 10 + 3
                 // this.gltf.scale.y = Math.abs(Math.sin(elapsedTime)) * 3 + 3
