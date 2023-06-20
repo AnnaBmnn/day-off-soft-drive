@@ -33,10 +33,13 @@ export default {
     }
   },
   mounted() {
-    const scrollContent = document.querySelector('.window95__content-container')
-
-    this.translateY = Math.random() * window.innerHeight * 0.90 + 5
-    this.translateX = Math.random() * window.innerWidth * 0.8
+    let scrollHeight = Math.max(
+      document.body.scrollHeight, document.documentElement.scrollHeight,
+      document.body.offsetHeight, document.documentElement.offsetHeight,
+      document.body.clientHeight, document.documentElement.clientHeight
+    )
+    this.translateY = Math.random() * scrollHeight 
+    this.translateX = Math.random() * window.innerWidth
     this.duration = Math.random() * 3
 
     window.setInterval(()=> {
@@ -44,7 +47,7 @@ export default {
       this.scale = 0
       window.setTimeout(() => {
       this.translateX = Math.random() * window.innerWidth 
-      this.translateY = Math.random() * scrollContent.scrollHeight * 0.90 + 5
+      this.translateY = Math.random() * scrollHeight
       }, 350)
       window.setTimeout(() => {
         this.scale = Math.random() * 3.0

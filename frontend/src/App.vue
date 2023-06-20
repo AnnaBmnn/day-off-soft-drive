@@ -7,43 +7,45 @@
       <Checkout-Payment :minAmount="bid" v-on:onHigherBid="updateBidAmount"  />
     </ComponentCard>
     <ComponentWindow95  >
-      <ComponentChangeBackground v-on:onBgChange="onBgChange" />
+    </ComponentWindow95>
+    
+    <ComponentChangeBackground v-on:onBgChange="onBgChange" />
 
-      <ComponentPrice :priceValue="bid" />
-      <ComponentAdd @openModalEvent="this.openModal = true" />
-      <ComponentPrice :priceValue="bid" />
-      <ComponentAdd @openModalEvent="this.openModal = true" />
-      <ComponentPrice :priceValue="bid" />
-      <ComponentAdd @openModalEvent="this.openModal = true" />
-      <ComponentPrice :priceValue="bid" />
-      <ComponentAdd @openModalEvent="this.openModal = true" />
-      <ComponentPrice :priceValue="bid" />
-      <ComponentAdd @openModalEvent="this.openModal = true" />
-      <ComponentPrice :priceValue="bid" />
-      <ComponentPrice :priceValue="bid" />
-      <ComponentPrice :priceValue="bid" />
-      <ComponentPrice :priceValue="bid" />
-      <ComponentAdd @openModalEvent="this.openModal = true" />
-      <ComponentPrice :priceValue="bid" />
-      <ComponentAdd @openModalEvent="this.openModal = true" />
-      <ComponentAdd @openModalEvent="this.openModal = true" />
-      <ComponentAdd @openModalEvent="this.openModal = true" />
-      <ComponentAdd @openModalEvent="this.openModal = true" />
+    <ComponentPrice :priceValue="bid" />
+    <ComponentAdd @openModalEvent="this.openModal = true" />
+    <ComponentPrice :priceValue="bid" />
+    <ComponentAdd @openModalEvent="this.openModal = true" />
+    <ComponentPrice :priceValue="bid" />
+    <ComponentAdd @openModalEvent="this.openModal = true" />
+    <ComponentPrice :priceValue="bid" />
+    <ComponentAdd @openModalEvent="this.openModal = true" />
+    <ComponentPrice :priceValue="bid" />
+    <ComponentAdd @openModalEvent="this.openModal = true" />
+    <ComponentPrice :priceValue="bid" />
+    <ComponentPrice :priceValue="bid" />
+    <ComponentPrice :priceValue="bid" />
+    <ComponentPrice :priceValue="bid" />
+    <ComponentAdd @openModalEvent="this.openModal = true" />
+    <ComponentPrice :priceValue="bid" />
+    <ComponentAdd @openModalEvent="this.openModal = true" />
+    <ComponentAdd @openModalEvent="this.openModal = true" />
+    <ComponentAdd @openModalEvent="this.openModal = true" />
+    <ComponentAdd @openModalEvent="this.openModal = true" />
 
-      <SectionContent />
+    <SectionContent />
 
-      <ComponentMarquee  /> 
-      <ComponentMarquee  /> 
-      <ComponentAddBig  />
+    <ComponentMarquee  /> 
+    <ComponentMarquee  /> 
+    <ComponentAddBig  />
 
-      <AddBigPlug  />
-      <ComponentThreejs class="window95__img" />
+    <AddBigPlug  />
+    <ComponentThreejs class="window95__img" />
       <!-- <img
         class="window95__img"
         src="~@/assets/peluche.png"
         alt="Gif of a red rose turning and text saying I love you"
       /> -->
-    </ComponentWindow95>
+    
     <!-- <ComponentCardSoftDrive /> -->
   </div>
 </template>

@@ -1,47 +1,44 @@
 <template>
-<div   :style="cssProps"  class="window95 wizz">
-  <div class="window95__container">
-    <header class="window95__header">
-      <div>
-        <h2 class="window95__title">[̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅] The soft drive [̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]</h2>
-      </div>
-      <div class="window95__buttons">
-        <button class="window95__button">
-          <div class="window95__button-container">
-            <img
-              class="window95__button-icon"
-              src="~@/assets/icons/icon-reduce.svg"
-              alt="icon x for closing window"
-            /> 
-          </div>
-        </button>
-        <button class="window95__button">
-          <div class="window95__button-container">
-            <img
-              class="window95__button-icon"
-              src="~@/assets/icons/icon-full-screen.svg"
-              alt="icon x for closing window"
-            /> 
-          </div>
-        </button>
-        <button class="window95__button">
-          <div class="window95__button-container">
-            <img
-              class="window95__button-icon"
-              src="~@/assets/icons/icon-close.svg"
-              alt="icon x for closing window"
-            /> 
-          </div>
-        </button>
-      </div>
-    </header>
-    <div @scroll="onScroll"  class="window95__content-container">    
-      <div class="window95__content">
-        <slot>
-        </slot> 
-      </div>
+<div>
+  <header :style="cssProps" class="window95__header wizz">
+    <div>
+      <h2 class="window95__title">[̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅] The soft drive [̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]</h2>
     </div>
-  </div>
+    <div class="window95__buttons">
+      <button class="window95__button">
+        <div class="window95__button-container">
+          <img
+            class="window95__button-icon"
+            src="~@/assets/icons/icon-reduce.svg"
+            alt="icon x for closing window"
+          /> 
+        </div>
+      </button>
+      <button class="window95__button">
+        <div class="window95__button-container">
+          <img
+            class="window95__button-icon"
+            src="~@/assets/icons/icon-full-screen.svg"
+            alt="icon x for closing window"
+          /> 
+        </div>
+      </button>
+      <button class="window95__button">
+        <div class="window95__button-container">
+          <img
+            class="window95__button-icon"
+            src="~@/assets/icons/icon-close.svg"
+            alt="icon x for closing window"
+          /> 
+        </div>
+      </button>
+    </div>
+  </header>
+
+  <div class="bar bar--top"></div>
+  <div class="bar bar--left"></div>
+  <div class="bar bar--right"></div>
+  <div class="bar bar--bottom"></div>
 </div>
 </template>
 
@@ -85,45 +82,25 @@ export default {
 };
 </script>
 <style >
-.window95__content-container {
+body{
   background: var(--backgroundUrl);
   background-size:  var(--percentage);
+  
 }
 
 </style>
-<style scoped>
-.window95 {
-  font-family: 'W95FA';
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  transform: translate(var(--translateX), var(--translateY));
-  width: calc(100vw - 15px);
-  height: calc(100vh - 10px);
-  z-index: 20;
-  padding: 2px;
-  resize: both; 
-  will-change: transform;
-  background-color: #C3C3C3;
-  box-shadow:  2px 2px 0px 0px #F0F0F0 inset, -2px -2px 0px 0px #262626 inset;
-}
-
-.window95__container {
-  position: relative;
-  box-sizing: border-box;
-  padding: 2px;
-  height: 100%;
-  width: 100%;
-  box-shadow: 2px 2px 0px 0px #B1B1B1 inset, -2px -2px 0px 0px #7E7E7E inset;
-}
-
-
+<style >
 .window95.wizz {
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both var(--delay) 2;
 }
 
 .window95__header {
-  padding: 5px;
+  position: fixed;
+  top: -2px;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  padding: 5px 10px 5px 5px;
   /* height: 42px; */
   background-color: #02007F;
   margin: 1px 1px 1px 1px;
@@ -167,53 +144,133 @@ export default {
   height: 10px;
 }
 
-.window95__content-container {
-  /* background: url('~@/assets/background/bg-ciel.jpg'); */
-  /* background-size: 120%; */
-  position: relative;
-  height: calc(100% - 80px);
-  overflow: scroll;
-  margin: 25px 2px;
-  padding: 2px;
-  box-shadow: -2px -2px 0px 0px #F0F0F0 inset, 2px 2px 0px 0px #262626 inset;
+body {
+  font-family: 'W95FA';
+  z-index: 20;
+  /* padding: 2px; */
 }
-.window95__content-container:before {
-  content: '';
+
+.bar--top {
   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 54px;
+  z-index: 19;
+  background-color: #C3C3C3;
+  /* box-shadow:  2px 2px 0px 0px #F0F0F0 inset, -2px -2px 0px 0px #262626 inset; */
+}
+.bar--top::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 6px;
+  right: 8px;
   height: 2px;
-  /* top: calc(100% - 2px); */
-  bottom: 24px;
-  left: 8px;
-  right: 8px;
-  background: #F0F0F0;
-  z-index: 10;
-  pointer-events: none;
+  background: rgba(38, 38, 38, 1);
 }
-.window95__content-container:after {
+.bar--top::after {
   content: '';
-  position: fixed;
-  top: 66px;
+  position: absolute;
+  top: calc(100% + 2px);
   left: 8px;
-  right: 8px;
-  bottom: 26px;
-  box-shadow: -2px -2px 0px 0px #FFFFFF inset, 2px 2px 0px 0px #7E7E7E inset;
-  pointer-events: none;
+  right: 10px;
+  height: 2px;
+  background: rgba(126, 126, 126, 1);
 }
-
-.window95__content {
-  /* background-color: white; */
-  /* max-height: 100%; */
-  height: 600vh;
-  /* overflow: scroll; */
-  padding: 10px 8px;
-  /* box-shadow: -2px -2px 0px 0px #F0F0F0 inset, 2px 2px 0px 0px #7E7E7E inset; */
-  /* height: calc(100% - 40px); */
-}
-
-.window95__img {
-  height: calc(100% - 89px);
+.bar--bottom {
   position: fixed;
-  pointer-events: none;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 16px;
+  z-index: 19;
+  background-color: #C3C3C3;
+  /* box-shadow:  2px 2px 0px 0px #F0F0F0 inset, -2px -2px 0px 0px #262626 inset; */
+}
+.bar--bottom::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 6px;
+  right: 8px;
+  height: 2px;
+  background: rgba(38, 38, 38, 1);
+}
+.bar--bottom::after {
+  content: '';
+  position: absolute;
+  bottom: calc(100% + 2px);
+  left: 8px;
+  right: 10px;
+  height: 2px;
+  background: rgba(126, 126, 126, 1);
+}
+
+.bar--left {
+  position: fixed;
+  top: 54px;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+  z-index: 19;
+  background-color: #C3C3C3;
+  /* box-shadow:  2px 2px 0px 0px #F0F0F0 inset, -2px -2px 0px 0px #262626 inset; */
+}
+.bar--left::before {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 0;
+  bottom: 16px;
+  /* left: 8px; */
+  /* right: 8px; */
+  width: 2px;
+  background: rgba(38, 38, 38, 1);
+}
+.bar--left::after {
+  content: '';
+  position: absolute;
+  left: calc(100% + 2px);
+  top: 2px;
+  bottom: 16px;
+  /* left: 8px; */
+  /* right: 8px; */
+  width: 2px;
+  background: rgba(126, 126, 126, 1);
+}
+
+.bar--right {
+  position: fixed;
+  top: 54px;
+  bottom: 0;
+  right: 0;
+  width: 8px;
+  z-index: 19;
+  background-color: #C3C3C3;
+  /* box-shadow:  2px 2px 0px 0px #F0F0F0 inset, -2px -2px 0px 0px #262626 inset; */
+}
+.bar--right::before {
+  content: '';
+  position: absolute;
+  right: 100%;
+  top: 0;
+  bottom: 16px;
+  /* left: 8px; */
+  /* right: 8px; */
+  width: 2px;
+  background: rgba(38, 38, 38, 1);
+}
+.bar--right::after {
+  content: '';
+  position: absolute;
+  right: calc(100% + 2px);
+  top: 2px;
+  bottom: 16px;
+  /* left: 8px; */
+  /* right: 8px; */
+  width: 2px;
+  background: rgba(126, 126, 126, 1);
 }
 
 

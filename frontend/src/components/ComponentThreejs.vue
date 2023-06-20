@@ -212,14 +212,13 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 canvas {
-    /* position: absolute; */
+    position: fixed;
     top: 0;
     left: 0;
+    height: 100vh;
     /* right: 0; */
-    bottom: 0;
     z-index: 0;
     width: 50%;
-    height: 100%;
 
 }
 </style>

@@ -36,9 +36,11 @@ export default {
     }
   },
   mounted() {
-    const scrollContent = document.querySelector('.window95__content-container')
-    this.translateX = Math.random() * window.innerWidth * 0.3 + 15
-    this.translateY = Math.random() * scrollContent.scrollHeight * 0.90 + 5
+    // const scrollContent = window
+
+
+    this.translateX = Math.random() * window.innerWidth
+    this.translateY = Math.random() * window.innerHeight 
     this.rotate = Math.random() * 50 - 25
     this.scale = Math.random() * 3.0 
 
@@ -46,8 +48,8 @@ export default {
 
       this.scale = 0
       window.setTimeout(() => {
-      this.translateX = Math.random() * window.innerWidth * 0.3 + 15
-      this.translateY = Math.random() * scrollContent.scrollHeight * 0.90 + 5
+      this.translateX = Math.random() * window.innerWidth 
+      this.translateY = Math.random() * window.innerHeight  
       }, 350)
       window.setTimeout(() => {
         this.scale = Math.random() * 3.0
@@ -60,7 +62,7 @@ export default {
 
 <style scoped>
 .add {
-  position: absolute;
+  position: fixed;
   cursor: help;
   /* position: relative; */
   /* z-index: 10; */
@@ -82,7 +84,7 @@ export default {
   font-size: 36px;
   /* font-style: italic; */
   font-weight: 800;
-  color: red;
+  color: #fea5d2;
   background-color: #ffed77;
   letter-spacing: -3px;
   transform: scaleY(2.5);
@@ -106,9 +108,11 @@ export default {
   font-weight: 600;
   position: relative;
   z-index: 2;
-  color: yellow;
+  /* color: yellow; */
   font-style: italic;
-  background-color: red;
+  /* background-color: red; */
+  background-color: #fea5d2;
+  color: #ffed77;
   align-items: baseline;
   transform: translateY(15px);
 }
