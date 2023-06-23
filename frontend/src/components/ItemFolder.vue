@@ -2,7 +2,7 @@
 <div>
     <button :class="`item-folder ${openModal ? 'blur' : ''}`" @click="this.openModal = true">
         <img class="item-folder__icon" src="~@/assets/folder-heart.png">
-        <div class="item-folder__title">My soft drive</div>
+        <div class="item-folder__title">Check the files</div>
     </button>
     <ComponentCard title="My soft drive" :openModal="openModal" @closeModalEvent="this.openModal = false">
         <div :class="`item-folder__card ${backgroundData}`">

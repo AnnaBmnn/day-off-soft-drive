@@ -92,7 +92,7 @@ export default {
 <style scoped>
 .card {
   cursor: move;
-  position: fixed;
+  position: absolute;
   top: 0%;
   left: 0%;
   transform: translate(var(--translateX), var(--translateY));
@@ -100,7 +100,7 @@ export default {
   min-width: 350px;
   min-height: 450px;
   border-radius: 5px;
-  z-index: 22;
+  z-index: 30;
   resize: both;
   will-change: transform;
 }

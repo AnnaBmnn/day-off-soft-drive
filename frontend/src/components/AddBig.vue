@@ -34,7 +34,8 @@ export default {
     let callback = (entries) => {
       entries.forEach((entry) => {
         console.log(entry)
-        this.ratio = 1 + entry.intersectionRatio * 2
+        this.ratio = 1 + entry.intersectionRatio * 1.8
+
         // Each entry describes an intersection change for one observed
         // target element:
         //   entry.boundingClientRect

@@ -217,7 +217,7 @@ canvas {
     left: 0;
     height: 100vh;
     /* right: 0; */
-    z-index: 4;
+    z-index: 1;
     width: 50%;
 
 }

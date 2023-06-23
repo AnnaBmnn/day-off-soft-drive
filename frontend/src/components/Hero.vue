@@ -1,16 +1,17 @@
 <template>
 <section  :style="cssProps"  class="section-hero">
   <img src="~@/assets/official/soft-drive.png" alt="" class="section-hero__logo">
-    <div class="section-hero__text">
-      <img src="~@/assets/official/pink_star.png" alt="" class="section-hero__deco--1">
+  <div class="section-hero__text">
+    <img src="~@/assets/official/pink_star.png" alt="" class="section-hero__deco--1">
 
-      Launching the unhardest hard disk on the market. 
-      An external HDD shaped as an extremely tender teddy bear, 
-      lovingly crafted in Tokyo, that comes fulfilled with 
-      ultra cheezy files:
-      <img src="~@/assets/official/stars.png" alt="" class="section-hero__deco--2">
+    Launching the ☻ unhardest hard disk  ☻  on the market. 
+    An external HDD shaped as an extremely tender teddy bear, 
+    lovingly crafted in Tokyo, that comes fulfilled with 
+    ultra cheezy files:
+    <img src="~@/assets/official/stars.png" alt="" class="section-hero__deco--2">
 
-    </div>
+  </div>
+  <ComponentPrice class="checkout__price" :priceValue="minAmount + 1" />
 </section>
 </template>
 
@@ -66,12 +67,13 @@ export default {
 .section-hero__text {
   position: relative;
   margin-top: 15vh;
-  margin-bottom: 15vh;
+  margin-bottom: 30vh;
   text-transform: uppercase;
   color: white;
-  width: 37%;
+  width: 39%;
   margin-right: 9.5vw;
-  font-size: 18px;
+  font-size: 22px;
+  line-height: 30px;
   text-align: justify;
   mix-blend-mode: difference;
 }
@@ -88,9 +90,10 @@ export default {
 .section-hero__deco--2 {
   position: absolute;
   width: 7vw;
-  top: 175%;
+  bottom: 0%;
   right: 100%;
-  transform: translate(0%, -80%);
+  transform: translate(0%, 80%) scaleY(1.3);
+
 }
 
 @keyframes rotate {

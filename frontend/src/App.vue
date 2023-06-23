@@ -10,13 +10,13 @@
     </ComponentWindow95>
 
     <ComponentChangeBackground v-on:onBgChange="onBgChange" />
-    <ComponentPrice :priceValue="bid" />
-    <ComponentPrice :priceValue="bid" />
-    <ComponentPrice :priceValue="bid" />
-    <ComponentPrice :priceValue="bid" /> 
+    <!-- <ComponentPrice :priceValue="bid" />
     <ComponentPrice :priceValue="bid" />
     <ComponentPrice :priceValue="bid" />
     <ComponentPrice :priceValue="bid" /> 
+    <ComponentPrice :priceValue="bid" />
+    <ComponentPrice :priceValue="bid" />
+    <ComponentPrice :priceValue="bid" />  -->
     <!-- <ComponentAdd @openModalEvent="this.openModal = true" /> -->
     <!-- <ComponentPrice :priceValue="bid" /> -->
     <!-- <ComponentAdd @openModalEvent="this.openModal = true" /> -->
@@ -24,7 +24,7 @@
 
     <!-- <ComponentAdd @openModalEvent="this.openModal = true" /> -->
     <!-- <ComponentPrice :priceValue="bid" /> -->
-    <ComponentAddBig  />
+    <!-- <ComponentAddBig  /> -->
 
     <Hero />
 
@@ -54,9 +54,9 @@ import ComponentCard from './components/Card.vue';
 import ComponentChangeBackground from './components/ChangeBg.vue';
 import ComponentThreejs from './components/ComponentThreejs.vue';
 import ComponentWindow95 from './components/Window95.vue';
-import ComponentPrice from './components/Price.vue';
+// import ComponentPrice from './components/Price.vue';
 // import ComponentAdd from './components/Add.vue';
-import ComponentAddBig from './components/AddBig.vue';
+// import ComponentAddBig from './components/AddBig.vue';
 // import AddBigPlug from './components/AddBigPlug.vue';
 // import ComponentMarquee from './components/Marquee.vue';
 import SectionContent from './components/SectionContent.vue';
@@ -74,9 +74,9 @@ export default {
     ComponentCard,
     ComponentChangeBackground,
     ComponentWindow95,
-    ComponentPrice,
+    // ComponentPrice,
     // ComponentAdd,
-    ComponentAddBig,
+    // ComponentAddBig,
     // AddBigPlug,
     // ComponentMarquee,
     SectionContent,
