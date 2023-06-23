@@ -59,7 +59,7 @@ export default {
 <style scoped>
 .section-content {
     position: relative;
-    z-index: 2;
+    /* z-index: 2; */
     height: 100vh;
     display: flex;
     flex-wrap: wrap;

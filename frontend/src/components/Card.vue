@@ -1,7 +1,7 @@
 <template>
-<div v-show="openModalData" @mousedown="onMouseDown"  :style="cssProps"  class="card wizz">
+<div v-show="openModalData"  :style="cssProps"  class="card wizz">
   <div class="card__container">
-    <header class="card__header">
+    <header class="card__header" @mousedown="onMouseDown" >
       <h2 class="card__title">{{title}} </h2>
       <button class="card__button" @click="onClick">
         <div class="card__button-container">
@@ -91,7 +91,6 @@ export default {
 
 <style scoped>
 .card {
-  cursor: move;
   position: absolute;
   top: 0%;
   left: 0%;
@@ -100,7 +99,7 @@ export default {
   min-width: 350px;
   min-height: 450px;
   border-radius: 5px;
-  z-index: 30;
+  z-index: 15;
   resize: both;
   will-change: transform;
 }
@@ -135,6 +134,7 @@ export default {
   height: fit-content;
 }
 .card__header {
+  cursor: move;
   margin: 0;
   font-family: 'Times New Roman', Times, serif;
   /* padding: 5px 4px 5px 8px; */
@@ -143,6 +143,7 @@ export default {
   z-index: 12;
   display: flex;
   justify-content: space-between;
+  padding: 2px;
 }
 .card__title {
   margin: 0;
@@ -153,6 +154,33 @@ export default {
   font-style: italic;
   text-align: left;
 }
+
+.card__button {
+  cursor: pointer;
+  font-family: 'W95FA';
+  width: 24px;
+  height: 24px;
+  margin-right: 4px;
+  margin-top: 2px;
+  padding: 2px;
+  border-radius: 0;
+  border: none;
+  line-height: 21px;
+  background: #C3C3C3;
+  margin-left: 6px;
+  box-shadow:  2px 2px 0px 0px #F0F0F0 inset, -2px -2px 0px 0px #262626 inset;
+}
+
+.card__button-container {
+  width: 100%;
+  height: 100%;
+  box-shadow: 2px 2px 0px 0px #B1B1B1 inset, -2px -2px 0px 0px #7E7E7E inset;
+}
+
+.card__button-icon {
+  height: 10px;
+}
+
 
 @keyframes shake {
   10%, 90% {

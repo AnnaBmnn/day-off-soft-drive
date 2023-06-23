@@ -35,7 +35,7 @@ export default {
         {
           name: "jean",
           src: "url('../background/bg-jean.jpg')",
-          percentage: "100%"
+          percentage: "50%"
         },
         {
           name: "paillettes",

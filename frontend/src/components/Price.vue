@@ -1,5 +1,9 @@
 <template>
-  <div class="price" ref="price" :style="cssProps">
+  <div 
+    class="price" 
+    :class="classChange" 
+    ref="price" 
+    :style="cssProps">
     <div class="price__text">
       <div class="price__subtext">now for</div>
       {{priceValue}}<sup>€</sup>
@@ -18,7 +22,8 @@ export default {
       translateX: 0,
       translateY: 0,
       duration: 10,
-      scale: 1
+      scale: 1,
+      classChange: 'fixed'
     };
   },
   props: {
@@ -40,30 +45,37 @@ export default {
       document.body.offsetHeight, document.documentElement.offsetHeight,
       document.body.clientHeight, document.documentElement.clientHeight
     )
-    this.translateY = Math.random() * scrollHeight 
     this.translateX = Math.random() * window.innerWidth
-    this.duration = Math.random() * 3 + 1
+    this.duration = Math.random() * 7 + 1
     this.scale = Math.random() * 1 + 1
 
-    if(this.scale % 2 === 0){
-      this.$refs.price.classList.add('fixed')
+
+    if(Math.round(Math.random() * 10 ) % 2  === 0){
+      this.translateY = Math.random() * window.innerHeight 
+
+      this.classChange = 'fixed'
     } else {
-      this.$refs.price.classList.remove('fixed')
+      this.translateY = Math.random() * scrollHeight 
+      this.classChange = null
+
     }
 
     window.setInterval(()=> {
 
       this.scale = 0
       window.setTimeout(() => {
-      this.translateX = Math.random() * window.innerWidth 
+      // this.translateX = Math.random() * window.innerWidth 
       this.translateY = Math.random() * scrollHeight
       }, 350)
       window.setTimeout(() => {
         this.scale = Math.random() * 1 + 1
-        if(this.scale % 2 === 0){
-          this.$refs.price.classList.add('fixed')
+        if(Math.round(Math.random() * 10 )  %  2 == 0){
+          this.translateY = Math.random() * window.innerHeight 
+          this.classChange = 'fixed'
         } else {
-          this.$refs.price.classList.remove('fixed')
+          this.translateY = Math.random() * scrollHeight 
+          this.classChange = null
+
         }
       }, 650)
 

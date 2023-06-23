@@ -50,6 +50,8 @@ export default {
 
 <style scoped>
 .section-hero {
+  width: 60%;
+  right: 0;
   position: relative;
   z-index: 4;
   /* height: 100vh; */
@@ -60,18 +62,18 @@ export default {
 }
 .section-hero__logo {
   /* position: absolute; */
-  width: 65%;
+  width: 100%;
   margin-left: auto;
 }
 
 .section-hero__text {
   position: relative;
-  margin-top: 15vh;
+  margin-top: 20vh;
   margin-bottom: 30vh;
   text-transform: uppercase;
   color: white;
-  width: 39%;
-  margin-right: 9.5vw;
+  width: 80%;
+  margin-right: 10%;
   font-size: 22px;
   line-height: 30px;
   text-align: justify;

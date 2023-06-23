@@ -10,13 +10,10 @@
     </ComponentWindow95>
 
     <ComponentChangeBackground v-on:onBgChange="onBgChange" />
-    <!-- <ComponentPrice :priceValue="bid" />
-    <ComponentPrice :priceValue="bid" />
-    <ComponentPrice :priceValue="bid" />
+    <!-- <ComponentPrice :priceValue="bid" /> -->
+    <!-- <ComponentPrice :priceValue="bid" /> -->
+    <!-- <ComponentPrice :priceValue="bid" /> -->
     <ComponentPrice :priceValue="bid" /> 
-    <ComponentPrice :priceValue="bid" />
-    <ComponentPrice :priceValue="bid" />
-    <ComponentPrice :priceValue="bid" />  -->
     <!-- <ComponentAdd @openModalEvent="this.openModal = true" /> -->
     <!-- <ComponentPrice :priceValue="bid" /> -->
     <!-- <ComponentAdd @openModalEvent="this.openModal = true" /> -->
@@ -35,8 +32,7 @@
     <!-- <ComponentAddBig  /> -->
 
     <ComponentThreejs class="window95__img" />
-    <img src="~@/assets/official/plug-it-or-hug-it.png" alt="" class="app__plug">
-
+    <ComponentDeco />
       <!-- <img
         class="window95__img"
         src="~@/assets/peluche.png"
@@ -54,7 +50,8 @@ import ComponentCard from './components/Card.vue';
 import ComponentChangeBackground from './components/ChangeBg.vue';
 import ComponentThreejs from './components/ComponentThreejs.vue';
 import ComponentWindow95 from './components/Window95.vue';
-// import ComponentPrice from './components/Price.vue';
+import ComponentPrice from './components/Price.vue';
+import ComponentDeco from './components/Deco.vue';
 // import ComponentAdd from './components/Add.vue';
 // import ComponentAddBig from './components/AddBig.vue';
 // import AddBigPlug from './components/AddBigPlug.vue';
@@ -74,7 +71,8 @@ export default {
     ComponentCard,
     ComponentChangeBackground,
     ComponentWindow95,
-    // ComponentPrice,
+    ComponentPrice,
+    ComponentDeco,
     // ComponentAdd,
     // ComponentAddBig,
     // AddBigPlug,
@@ -212,6 +210,9 @@ div {
   width: 100vw;
   overflow-x: hidden;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 .presentation {
   position: relative;
@@ -268,13 +269,6 @@ h1 {
   z-index: -3;
   top: 0;
   left: 0;
-}
-
-.app__plug {
-  position: fixed;
-  left: 7vw;
-  top: 14.5vh;
-  width: 15vw;
 }
 
 </style>

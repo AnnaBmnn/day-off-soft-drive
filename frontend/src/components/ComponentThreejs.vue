@@ -127,7 +127,7 @@ export default {
                     // this.gltf.material.wireframe = false
                     // this.gltf.rotation.x = Math.PI * 0.5
                     this.gltf.rotation.y = -Math.PI * 1.5
-                    this.gltf.scale.set(2.5, 2.5, 2.5)
+                    this.gltf.scale.set(3, 3, 3)
                     this.scene.add(this.gltf)
                 },
                 (progress) =>

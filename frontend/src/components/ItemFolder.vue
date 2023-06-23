@@ -1,57 +1,57 @@
 <template>
 <div>
     <button :class="`item-folder ${openModal ? 'blur' : ''}`" @click="this.openModal = true">
-        <img class="item-folder__icon" src="~@/assets/folder-heart.png">
+        <img class="item-folder__icon" src="~@/assets/official/lovefolder.png">
         <div class="item-folder__title">Check the files</div>
     </button>
     <ComponentCard title="My soft drive" :openModal="openModal" @closeModalEvent="this.openModal = false">
         <div :class="`item-folder__card ${backgroundData}`">
-            <!-- <div class="item-folder__text">
+            <div class="item-folder__text">
                 Launching the unhardest hard disk on the market. An external HDD shaped as an extremely tender teddy bear, lovingly crafted in Tokyo, that comes fulfilled with ultra cheezy files:
-            </div> -->
+            </div>
             <div class="item-folder__content">
-                <div class="item-folder--inner" @mouseenter="backgroundData = 'hannaMontana'" @mouseleave="backgroundData = null">
-                    <img class="item-folder__img" src="~@/assets/pixel-heart.png">
+                <div class="item-folder--inner" @mouseenter="backgroundData = 'hannaMontana'" >
+                    <img class="item-folder__img" src="~@/assets/official/purple-heart.png">
                     <div class="item-folder__title">Hannah Montana all episodes</div>
                 </div>
-                <div class="item-folder--inner" @mouseenter="backgroundData = 'noteBook'" @mouseleave="backgroundData = null">
-                    <img class="item-folder__img" src="~@/assets/pixel-heart.png">
+                <div class="item-folder--inner" @mouseenter="backgroundData = 'noteBook'" >
+                    <img class="item-folder__img" src="~@/assets/official/yellow-heart.png">
                     <div class="item-folder__title">The Notebook (Full movie HD)</div>
                 </div>
-                <div class="item-folder--inner" @mouseenter="backgroundData = 'panda'" @mouseleave="backgroundData = null">
-                    <img class="item-folder__img" src="~@/assets/pixel-heart.png">
+                <div class="item-folder--inner" @mouseenter="backgroundData = 'panda'" >
+                    <img class="item-folder__img" src="~@/assets/official/green-heart.png">
                     <div class="item-folder__title">100 pictures of Baby Pandas</div>
                 </div>
-                <div class="item-folder--inner"  @mouseenter="backgroundData = 'paolo'" @mouseleave="backgroundData = null">
-                    <img class="item-folder__img" src="~@/assets/pixel-heart.png">
+                <div class="item-folder--inner"  @mouseenter="backgroundData = 'paolo'" >
+                    <img class="item-folder__img" src="~@/assets/official/purple-heart.png">
                     <div class="item-folder__title">Paulo Coelho's full bibliography in PDF</div>
                 </div>
-                <div class="item-folder--inner" @mouseenter="backgroundData = 'mom'" @mouseleave="backgroundData = null">
-                    <img class="item-folder__img" src="~@/assets/pixel-heart.png">
+                <div class="item-folder--inner" @mouseenter="backgroundData = 'mom'" >
+                    <img class="item-folder__img" src="~@/assets/official/yellow-heart.png">
                     <div class="item-folder__title">Zip with Mom sticker collections</div>
                 </div>
-                <div class="item-folder--inner" @mouseenter="backgroundData = 'animal'" @mouseleave="backgroundData = null">
-                    <img class="item-folder__img" src="~@/assets/pixel-heart.png">
+                <div class="item-folder--inner" @mouseenter="backgroundData = 'animal'" >
+                    <img class="item-folder__img" src="~@/assets/official/green-heart.png">
                     <div class="item-folder__title">Cutest Baby Animals; Video Compilation</div>
                 </div>
-                <div class="item-folder--inner" @mouseenter="backgroundData = 'rosalia'" @mouseleave="backgroundData = null">
-                    <img class="item-folder__img" src="~@/assets/pixel-heart.png">
+                <div class="item-folder--inner" @mouseenter="backgroundData = 'rosalia'" >
+                    <img class="item-folder__img" src="~@/assets/official/purple-heart.png">
                     <div class="item-folder__title">Rosalía and Rauw Alejandro’s engagement moment in loop</div>
                 </div>
-                <div class="item-folder--inner" @mouseenter="backgroundData = 'ed'" @mouseleave="backgroundData = null">
-                    <img class="item-folder__img" src="~@/assets/pixel-heart.png">
+                <div class="item-folder--inner" @mouseenter="backgroundData = 'ed'" >
+                    <img class="item-folder__img" src="~@/assets/official/yellow-heart.png">
                     <div class="item-folder__title">The best of Ed Sheeran in acoustic</div>
                 </div>
-                <div class="item-folder--inner" @mouseenter="backgroundData = 'shawn'" @mouseleave="backgroundData = null">
-                    <img class="item-folder__img" src="~@/assets/pixel-heart.png">
+                <div class="item-folder--inner" @mouseenter="backgroundData = 'shawn'" >
+                    <img class="item-folder__img" src="~@/assets/official/green-heart.png">
                     <div class="item-folder__title">Zip containing Shawn Mendez's greatest hit</div>
                 </div>
-                <div class="item-folder--inner"  @mouseenter="backgroundData = 'cupcake'" @mouseleave="backgroundData = null">
-                    <img class="item-folder__img" src="~@/assets/pixel-heart.png">
+                <div class="item-folder--inner"  @mouseenter="backgroundData = 'cupcake'" >
+                    <img class="item-folder__img" src="~@/assets/official/purple-heart.png">
                     <div class="item-folder__title">100 cupcake recipe</div>
                 </div>
-                <div class="item-folder--inner"  @mouseenter="backgroundData = 'rainbow'" @mouseleave="backgroundData = null">
-                    <img class="item-folder__img" src="~@/assets/pixel-heart.png">
+                <div class="item-folder--inner"  @mouseenter="backgroundData = 'rainbow'" >
+                    <img class="item-folder__img" src="~@/assets/official/yellow-heart.png">
                     <div class="item-folder__title">Double rainbow pictures compilation</div>
                 </div>
             </div>
@@ -122,11 +122,15 @@ export default {
 .item-folder:hover {
     filter: blur(5px);
 }
+.item-folder__icon {
+    width: 30%;
+}
 .item-folder__title {
     margin-top: 8px;
 }
 .item-folder__card {
     padding: 4px 8px;
+    min-height: 450px;
 }
 
 .item-folder__card.hannaMontana {
@@ -168,6 +172,7 @@ export default {
     display: flex;
     align-items: self-start;
     flex-wrap: wrap;
+
 }
 .item-folder--inner {
     flex-basis: 25%;
