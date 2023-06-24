@@ -139,6 +139,7 @@ export default {
     /* animation: scale 600ms 400ms ease-in-out infinite alternate-reverse; */
 }
 .deco__text {
+    backdrop-filter: blur(2px);
     position: fixed;
     bottom: 7vh;
     left: 5vh;
