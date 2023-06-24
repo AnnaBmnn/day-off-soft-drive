@@ -1,8 +1,8 @@
 <template>
 <div class="">
-    <img src="~@/assets/official/heart.png" alt="" class="deco deco--heart-2">
-    <img src="~@/assets/official/heart.png" alt="" class="deco deco--heart-1">
-    <img src="~@/assets/official/heart.png" alt="" class="deco deco--heart-3">
+    <img src="~@/assets/official/heart1.png" alt="" class="deco deco--heart-2">
+    <img src="~@/assets/official/heart1.png" alt="" class="deco deco--heart-1">
+    <img src="~@/assets/official/heart1.png" alt="" class="deco deco--heart-3">
     <img src="~@/assets/official/yellow-heart.png" alt="" class="deco deco--yellow-heart-1">
     <img src="~@/assets/official/blue_star.png" alt="" class="deco deco--blue-star-1">
     <img src="~@/assets/official/blue_star.png" alt="" class="deco deco--blue-star-2">
