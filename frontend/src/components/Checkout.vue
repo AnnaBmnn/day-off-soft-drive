@@ -1,35 +1,54 @@
 <template>
   <div class="checkout" v-if="!paid" >
     <div class="">
-      <h3>The soft drive</h3>
-      <div class="checkout__text">
-        <p class="checkout__text--first">
-          This sale is an auction. Place the highest bid for a chance to win the softest hard drive on the market.
-        </p>
-        <p class="checkout__text--instruction">
-          Disclaimer, if you bid more than once, you will see a withdrawal of each amount for each bid. We promise to cancel the lowest bids as soon as possible. If you have any questions, please feel free to contact us at lorep-ipsum@dolores.com.
-        </p>
-        <p>
-        </p>
-        <p>
-          After clicking on pay, you pill redirected to the paypal plateforme.
-        </p>
-      </div>
-      <div>
-        The current highest bid is at {{minAmount}}€.
-      </div>
-      <ComponentPrice class="checkout__price" :priceValue="minAmount + 1" />
+      <h3 class="checkout__text--first">EXTERNAL HDD SHAPED AS AN EXTREMELY TENDER TEDDY BEAR</h3>
+      <p class="checkout__text--instruction checkout__text--first">
+        Place the highest bid to get the softest hard drive on the market
+      </p>
 
-      <input 
-        type="number" 
-        :min="minAmount"  
-        id="amount" 
-        name="amount"
-        :placeholder="minAmount + 1"
-        @input="onInput" 
-      />
+      <div class="checkout__content">
+        <div class="left checkout__column">
+          <img class="checkout__img" src="~@/assets/official/teddy_new.png" alt="">
+          <ComponentPrice class="checkout__price" :priceValue="minAmount + 1" />
+
+        </div>
+        <div class="right checkout__column">
+          <div class="checkout__text">
+              Time left to bid : 
+            <p class="checkout__text--instruction ">
+              <span class="highlight">{{days}} </span> <span class="top">days </span> 
+              <span class="highlight"> {{hours}} </span>  <span class="top">hours </span> 
+              <span class="highlight"> {{minutes}} </span>  <span class="top">minutes </span> 
+              <span class="highlight"> {{seconds}} </span>  <span class="top">seconds </span> 
+            </p>
+            <p class="checkout__date line">
+              <span class="checkout__text--instruction ">Bid end date : 10 june at 16:00</span>.
+            </p>
+
+            <p>Highest bid : <span class="highlight">{{minAmount}}.00</span> $</p>
+              <input 
+                type="number" 
+                :min="minAmount"  
+                id="amount" 
+                name="amount"
+                :placeholder="minAmount + 1"
+                @input="onInput" 
+              />
+              <div id="paypal-button-container" v-show="cartTotal > minAmount " class=""></div>
+            
+            <p class="checkout__text--instruction">
+              After clicking on pay, you will redirected to the paypal plateforme.
+            </p>
+          </div>
+        </div>
+      </div>
+      <p class="checkout__text--instruction">
+        Disclaimer, if you bid more than once, you will see a withdrawal of each amount for each bid. We promise to cancel the lowest bids as soon as possible. If you have any questions, please feel free to contact us at lorep-ipsum@dolores.com.
+      </p>
+
+
+
     </div>
-    <div id="paypal-button-container" v-show="cartTotal > minAmount " class=""></div>
   </div>
   <div v-else id="confirmation">Order complete!</div>
 </template>
@@ -48,6 +67,8 @@ export default {
       console.log(paypal)
       paypal
         .Buttons({
+          style: {
+          },
           createOrder: this.createOrder,
           onApprove: this.onApprove,
         })
@@ -57,6 +78,10 @@ export default {
   data() {
     return {
       paid: false,
+      days: 8,
+      hours: 5,
+      minutes: 12,
+      seconds: 32,
       cartTotal: {
         type: Number,
         default: 0.01,
@@ -133,16 +158,88 @@ const CLIENT_ID = 'AW58-_beMRQuBpj3JGJNkxiqhbDOFIfPqvjThTrVIzk3ChmWVfzU8jX3wLKf2
   text-transform: uppercase;
 }
 
+.highlight {
+  filter: blur(0.1px);
+  font-family: sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 32px;
+  text-align: center;
+  color: yellow;
+  line-height: 22px;
+  letter-spacing: 0.1px;
+  -webkit-text-stroke: 1.5px rgb(84, 152, 255);
+  text-stroke: 1.5px rgb(84, 152, 255);
+}
+
+.top {
+  display: inline-block;
+  transform: translateY(-16px);
+  /* vertical-align: top; */
+}
+.line {
+  position: relative;
+  margin-bottom: 24px;
+}
+.line::after {
+  content: '';
+  position: absolute;
+  background: black;
+  width: calc(100% );
+  height: 1px;
+  left: 0;
+  top: calc(100% + 8px);
+}
+
+.checkout__img {
+  max-width: 110%;
+  width: 80%;
+  margin: 0 auto;
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+
+}
+
+.checkout__logo {
+  width: 25%;
+}
+.checkout__date {
+  margin: 0 0 10px;
+}
 .checkout h3 {
-  margin: 10px 0 23px;
-  font-size: 3vw;
-  color: #62ff19;
-  /* filter: blur(5px); */
-  text-shadow: 2px 2px 0px black, -2px -2px 0px black;
+  margin: 3px 0 12px;
+  font-size: 1.8vw;
+  line-height: 2.2vw;
+  /* filter: blur(0.1px);
+  font-family: sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: justify;
+  color: #fea5d2;
+  letter-spacing: 0.1px;
+  -webkit-text-stroke: 1.5px yellow;
+  text-stroke: 1.5px yellow; */
+}
+.checkout__content {
+  display: flex;
+
+}
+.checkout__column.left {
+  position: relative;
+  flex-basis: 42%;
+}
+.checkout__column.right {
+  padding-right: 20px ;
+  flex-basis: 58%;
 }
 .checkout__text--first {
   width: 72%;
-
+}
+.checkout__date {
+  
 }
 .checkout__text--instruction {
   text-transform: none;
@@ -150,12 +247,13 @@ const CLIENT_ID = 'AW58-_beMRQuBpj3JGJNkxiqhbDOFIfPqvjThTrVIzk3ChmWVfzU8jX3wLKf2
 
 }
 .checkout .checkout__price {
-  position: absolute;
+  position: absolute!important;
   left: unset;
-  right: -20px;
-  top: -30px;
-  width: 40%;
-  transform: rotateY(20deg);
+  right: -40px;
+  top: 30%;
+  z-index: -1;
+  transform: scale(0.8) rotateY(20deg);
+  animation: none!important;
 }
 #paypal-button-container {
   margin: 30px 0;

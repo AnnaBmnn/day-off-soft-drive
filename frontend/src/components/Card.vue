@@ -95,9 +95,9 @@ export default {
   top: 0%;
   left: 0%;
   transform: translate(var(--translateX), var(--translateY));
-  width: 40vw;
+  width: 47vw;
   min-width: 350px;
-  min-height: 450px;
+  min-height: 500px;
   border-radius: 5px;
   z-index: 15;
   resize: both;

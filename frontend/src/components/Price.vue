@@ -6,7 +6,7 @@
     :style="cssProps">
     <div class="price__text">
       <div class="price__subtext">now for</div>
-      {{priceValue}}<sup>€</sup>
+      {{priceValue}}.00<sup>€</sup>
     </div>
     <div class="price__shape">
       <img src="~@/assets/shape/shape-star.svg" alt="">
