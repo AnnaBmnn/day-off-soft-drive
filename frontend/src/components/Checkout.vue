@@ -1,7 +1,7 @@
 <template>
   <div class="checkout" v-if="!paid" >
     <div class="">
-      <h3 class="checkout__text--first">EXTERNAL HDD SHAPED AS AN EXTREMELY TENDER TEDDY BEAR</h3>
+      <h3 class="checkout__text--first checkout__big-title">EXTERNAL HDD SHAPED AS AN EXTREMELY TENDER TEDDY BEAR</h3>
       <p class="checkout__text--instruction checkout__text--first">
         Place the highest bid to get the softest hard drive on the market
       </p>
@@ -14,26 +14,37 @@
         </div>
         <div class="right checkout__column">
           <div class="checkout__text">
+            <h3>
               Time left to bid : 
+            </h3>
             <p class="checkout__text--instruction ">
               <span class="highlight">{{days}} </span> <span class="top">days </span> 
               <span class="highlight"> {{hours}} </span>  <span class="top">hours </span> 
               <span class="highlight"> {{minutes}} </span>  <span class="top">minutes </span> 
               <span class="highlight"> {{seconds}} </span>  <span class="top">seconds </span> 
             </p>
-            <p class="checkout__date line">
-              <span class="checkout__text--instruction ">Bid end date : 10 june at 16:00</span>.
+            <p class="checkout__date ">
+              <span class="checkout__text--instruction">Bid end date : 10 june at 16:00</span>.
             </p>
 
-            <p>Highest bid : <span class="highlight">{{minAmount}}.00</span> $</p>
-              <input 
-                type="number" 
-                :min="minAmount"  
-                id="amount" 
-                name="amount"
-                :placeholder="minAmount + 1"
-                @input="onInput" 
-              />
+            <p class="checkout__text--instruction">Highest bid : <span class="">{{minAmount}}.00</span> $</p>
+            <div class="checkout__bid">
+              
+              <h3 class="checkout__input-title">Place a bid :</h3>
+              <span>
+                <input 
+                  class="checkout__input"
+                  type="number" 
+                  :min="minAmount + 1"  
+                  id="amount" 
+                  name="amount"
+                  :placeholder="minAmount + 1"
+                  @input="onInput" 
+                />
+                €
+                <span class="checkout__currency"></span>
+              </span>
+            </div>
               <div id="paypal-button-container" v-show="cartTotal > minAmount " class=""></div>
             
             <p class="checkout__text--instruction">
@@ -146,7 +157,11 @@ export default {
 const CLIENT_ID = 'AW58-_beMRQuBpj3JGJNkxiqhbDOFIfPqvjThTrVIzk3ChmWVfzU8jX3wLKf2Xg1U2W-9xDgFC35rYqa';
 </script>
 
-<style>
+<style scoped>
+h3 {
+  font-weight: 600;
+  font-size: 16px;
+}
 .checkout {
   padding: 8px;
   font-family: W95FA;
@@ -156,6 +171,8 @@ const CLIENT_ID = 'AW58-_beMRQuBpj3JGJNkxiqhbDOFIfPqvjThTrVIzk3ChmWVfzU8jX3wLKf2
   letter-spacing: 0.2em;
   text-align: justify;
   text-transform: uppercase;
+  height: 450px;
+  overflow: scroll;
 }
 
 .highlight {
@@ -209,7 +226,7 @@ const CLIENT_ID = 'AW58-_beMRQuBpj3JGJNkxiqhbDOFIfPqvjThTrVIzk3ChmWVfzU8jX3wLKf2
 .checkout__date {
   margin: 0 0 10px;
 }
-.checkout h3 {
+.checkout__big-title {
   margin: 3px 0 12px;
   font-size: 1.8vw;
   line-height: 2.2vw;
@@ -229,11 +246,17 @@ const CLIENT_ID = 'AW58-_beMRQuBpj3JGJNkxiqhbDOFIfPqvjThTrVIzk3ChmWVfzU8jX3wLKf2
 }
 .checkout__column.left {
   position: relative;
+  min-width: 42%;
+  max-width: 42%;
+  width: 42%;
   flex-basis: 42%;
 }
 .checkout__column.right {
   padding-right: 20px ;
   flex-basis: 58%;
+  min-width: 58%;
+  max-width: 58%;
+  width: 58%;
 }
 .checkout__text--first {
   width: 72%;
@@ -258,10 +281,49 @@ const CLIENT_ID = 'AW58-_beMRQuBpj3JGJNkxiqhbDOFIfPqvjThTrVIzk3ChmWVfzU8jX3wLKf2
 #paypal-button-container {
   margin: 30px 0;
 }
+.checkout__bid {
+  display: flex;
+}
+.checkout__input-title {
+  text-align: left;
+  white-space: nowrap;
+}
+.checkout__input {
+  text-align: right;
+  max-width: 50%;
+  display: inline;
+  filter: blur(0.5px);
+  border: none;
+  border-bottom: 1px solid black;
+  background: transparent;
+  font-family: sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 32px;
+  color: yellow;
+  line-height: 22px;
+  letter-spacing: 0.1px;
+  -webkit-text-stroke: 1.5px rgb(84, 152, 255);
+  text-stroke: 1.5px rgb(84, 152, 255);
+}
+.checkout__input::placeholder {
+  color: yellow;
+  filter: blur(1px);
+
+  opacity: 0.5;
+}
+
+
 
 #confirmation {
   color: green;
   margin-top: 1em;
   font-size: 2em;
+}
+</style>
+
+<style >
+.paypal-button-container  {
+  display: flex!important;
 }
 </style>
