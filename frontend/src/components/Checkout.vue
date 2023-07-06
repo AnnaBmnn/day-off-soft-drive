@@ -17,12 +17,8 @@
             <h3>
               Time left to bid : 
             </h3>
-            <p class="checkout__text--instruction ">
-              <span class="highlight">{{days}} </span> <span class="top">days </span> 
-              <span class="highlight"> {{hours}} </span>  <span class="top">hours </span> 
-              <span class="highlight"> {{minutes}} </span>  <span class="top">minutes </span> 
-              <span class="highlight"> {{seconds}} </span>  <span class="top">seconds </span> 
-            </p>
+            <ComponentCountdown />
+
             <p class="checkout__date ">
               <span class="checkout__text--instruction">Bid end date : 10 june at 16:00</span>.
             </p>
@@ -65,13 +61,15 @@
 </template>
 
 <script>
+import ComponentCountdown from './Countdown.vue';
 import ComponentPrice from './Price.vue';
 import { loadScript } from '@paypal/paypal-js';
 
 export default {
   name: 'Checkout-Payment',
   components: {
-    ComponentPrice
+    ComponentPrice,
+    ComponentCountdown
   },
   beforeCreate: function() {
     loadScript({ 'client-id': CLIENT_ID, 'intent': 'authorize' }).then((paypal) => {
