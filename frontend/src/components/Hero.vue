@@ -11,6 +11,8 @@
     <img src="~@/assets/official/stars.png" alt="" class="section-hero__deco--2">
 
   </div>
+  <ComponentAdd @openModalEvent="this.openModal = true" />
+
   <ComponentPrice class="checkout__price" :priceValue="minAmount + 1" />
 </section>
 </template>

@@ -101,7 +101,7 @@ export default {
   top: -2px;
   left: 0;
   right: 0;
-  z-index: 20;
+  z-index: 120;
   padding: 5px 10px 5px 5px;
   /* height: 42px; */
   background-color: #02007F;
@@ -158,7 +158,7 @@ body {
   left: 0;
   right: 0;
   height: 54px;
-  z-index: 19;
+  z-index: 119;
   background-color: #C3C3C3;
   /* box-shadow:  2px 2px 0px 0px #F0F0F0 inset, -2px -2px 0px 0px #262626 inset; */
 }
@@ -186,7 +186,7 @@ body {
   left: 0;
   right: 0;
   height: 16px;
-  z-index: 19;
+  z-index: 119;
   background-color: #C3C3C3;
   /* box-shadow:  2px 2px 0px 0px #F0F0F0 inset, -2px -2px 0px 0px #262626 inset; */
 }
@@ -215,7 +215,7 @@ body {
   bottom: 0;
   left: 0;
   width: 4px;
-  z-index: 19;
+  z-index: 119;
   background-color: #C3C3C3;
   /* box-shadow:  2px 2px 0px 0px #F0F0F0 inset, -2px -2px 0px 0px #262626 inset; */
 }
@@ -248,7 +248,7 @@ body {
   bottom: 0;
   right: 0;
   width: 8px;
-  z-index: 19;
+  z-index: 119;
   background-color: #C3C3C3;
   /* box-shadow:  2px 2px 0px 0px #F0F0F0 inset, -2px -2px 0px 0px #262626 inset; */
 }

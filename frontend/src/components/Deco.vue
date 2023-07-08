@@ -13,6 +13,11 @@
     <img src="~@/assets/official/star-pink.png" alt="" class="deco deco--star-2">
     <img src="~@/assets/official/star-red.png" alt="" class="deco deco--star-3">
 
+    <img src="~@/assets/official/star-pink.png" alt="" class="deco deco--star-4">
+    <img src="~@/assets/official/star-pink.png" alt="" class="deco deco--star-7">
+    <img src="~@/assets/official/purple-heart.png" alt="" class="deco deco--star-5">
+    <img src="~@/assets/official/star-red.png" alt="" class="deco deco--star-6">
+
     <p class="deco__text">Launching <br> the unhardest hard disk <br> on the market!!!</p>
 </div>
 </template>
@@ -102,6 +107,7 @@ export default {
     /* animation: scale 1200ms ease-in-out infinite alternate-reverse; */
 }
 .deco--blue-star-1 {
+  position: absolute;
     left: 11vw;
     top: 11vh;
     width: 6vh;
@@ -111,6 +117,7 @@ export default {
     /* filter: blur(0.5px); */
 }
 .deco--blue-star-2 {
+    position: absolute;
     left: 8vw;
     top: 16vh;
     width: 8vh;
@@ -135,6 +142,39 @@ export default {
 .deco--star-3 {
     top: 32.5vh;
     left: 32vw;
+    width: 5vw;
+    /* animation: scale 600ms 400ms ease-in-out infinite alternate-reverse; */
+}
+.deco--star-4 {
+    position: absolute;
+
+    bottom: 8vh;
+    left: 13.5vw;
+    width: 5vw;
+    /* animation: scale 600ms 00ms ease-in-out infinite alternate-reverse; */
+
+}
+.deco--star-5 {
+    position: absolute;
+
+    bottom: 15vh;
+    left: 10vw;
+    width: 5vw;
+    /* animation: scale 600ms 200ms ease-in-out infinite alternate-reverse; */
+}
+.deco--star-6 {
+    position: absolute;
+
+    bottom: 22.5vh;
+    left: 12vw;
+    width: 5vw;
+    /* animation: scale 600ms 400ms ease-in-out infinite alternate-reverse; */
+}
+.deco--star-7 {
+    position: absolute;
+
+    bottom: 29.5vh;
+    left: 11vw;
     width: 5vw;
     /* animation: scale 600ms 400ms ease-in-out infinite alternate-reverse; */
 }

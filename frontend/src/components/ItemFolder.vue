@@ -4,7 +4,7 @@
         <img class="item-folder__icon" src="~@/assets/official/lovefolder.png">
         <div class="item-folder__title">Check the files</div>
     </button>
-    <ComponentCard title="My soft drive" :openModal="openModal" @closeModalEvent="this.openModal = false">
+    <ComponentCard class="card" title="My soft drive" :openModal="openModal" @closeModalEvent="this.openModal = false">
         <div :class="`item-folder__card ${backgroundData}`">
             <div class="item-folder__text">
                 Launching the unhardest hard disk on the market. An external HDD shaped as an extremely tender teddy bear, lovingly crafted in Tokyo, that comes fulfilled with ultra cheezy files:
@@ -54,6 +54,8 @@
                     <img class="item-folder__img" src="~@/assets/official/yellow-heart.png">
                     <div class="item-folder__title">Double rainbow pictures compilation</div>
                 </div>
+                <div class="item-folder--inner"  @mouseenter="backgroundData = ''" >
+                </div>
             </div>
         </div>
 
@@ -97,6 +99,9 @@ export default {
 </script>
 
 <style scoped>
+.card {
+    resize: both;
+}
 .item-folder {
     cursor: pointer;
     font-family: 'W95FA', Times, serif;
@@ -128,54 +133,60 @@ export default {
 .item-folder__title {
     margin-top: 8px;
 }
-.item-folder__card {
-    padding: 4px 8px;
-    min-height: 450px;
-}
+
 
 .item-folder__card.hannaMontana {
-    background: url('https://media.giphy.com/media/fDqGThpuG6vS/giphy.gif') ;
+    background-image: url('https://media.giphy.com/media/fDqGThpuG6vS/giphy.gif') ;
 
 }
 .item-folder__card.noteBook {
-    background: url('https://media.giphy.com/media/iFKDPGLl3k5hu/giphy.gif');
+    background-image: url('https://media.giphy.com/media/iFKDPGLl3k5hu/giphy.gif');
 }
 .item-folder__card.panda {
-    background: url('https://media.giphy.com/media/EatwJZRUIv41G/giphy.gif');
+    background-image: url('https://media.giphy.com/media/EatwJZRUIv41G/giphy.gif');
 }
 .item-folder__card.paolo {
-    background: url('https://img1.picmix.com/output/pic/normal/0/3/5/2/4952530_b84a9.gif');
+    background-image: url('https://img1.picmix.com/output/pic/normal/0/3/5/2/4952530_b84a9.gif');
 }
 .item-folder__card.mom {
-    background: url('https://media.giphy.com/media/zxdeRFhiE5BiU/giphy.gif');
+    background-image: url('https://media.giphy.com/media/zxdeRFhiE5BiU/giphy.gif');
 }
 .item-folder__card.animal {
-    background: url('https://media.giphy.com/media/j5QdyFXZI5WvE8CjVT/giphy.gif');
+    background-image: url('https://media.giphy.com/media/j5QdyFXZI5WvE8CjVT/giphy.gif');
 }
 .item-folder__card.rosalia {
-    background: url('https://media.tenor.com/gDwSkPkI-EoAAAAd/rosalia-rauw-alejandro.gif');
+    background-image: url('https://media.tenor.com/gDwSkPkI-EoAAAAd/rosalia-rauw-alejandro.gif');
 }
 .item-folder__card.ed {
-    background: url('https://media.giphy.com/media/yMc2BCpIc7LFe/giphy.gif');
+    background-image: url('https://media.giphy.com/media/yMc2BCpIc7LFe/giphy.gif');
 }
 .item-folder__card.shawn {
-    background: url('https://media.giphy.com/media/3o6fIVdqTFNp99MxUY/giphy.gif');
+    background-image: url('https://media.giphy.com/media/3o6fIVdqTFNp99MxUY/giphy.gif');
 }
 .item-folder__card.cupcake {
-    background: url('https://media.giphy.com/media/NZ3sfEAasVkFa/giphy.gif');
+    background-image: url('https://img1.picmix.com/output/stamp/normal/0/9/4/3/1123490_95206.gif');
 }
 .item-folder__card.rainbow {
-    background: url('https://media.giphy.com/media/6p26sp0YT2LAI/giphy.gif');
+    background-image: url('https://media.giphy.com/media/6p26sp0YT2LAI/giphy.gif');
+}
+.item-folder__card {
+    padding: 4px 8px;
+    min-height: 450px;
+    background-size: cover;
 }
 
 .item-folder__content {
     display: flex;
     align-items: self-start;
+    justify-content: space-between;
     flex-wrap: wrap;
-
+}
+.item-folder__content::after {
+  content: "";
+  /* flex: auto; */
 }
 .item-folder--inner {
-    flex-basis: 25%;
+    flex-basis: 22%;
     min-width: 80px;
     display: flex;
     flex-direction: column;

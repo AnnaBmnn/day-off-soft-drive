@@ -28,6 +28,7 @@ export default {
   },
   props: {
     priceValue: String,
+    position: String
   },
   computed: {
     cssProps() {
@@ -40,46 +41,53 @@ export default {
     }
   },
   mounted() {
-    let scrollHeight = Math.max(
-      document.body.scrollHeight, document.documentElement.scrollHeight,
-      document.body.offsetHeight, document.documentElement.offsetHeight,
-      document.body.clientHeight, document.documentElement.clientHeight
-    )
-    this.translateX = Math.random() * window.innerWidth
-    this.duration = Math.random() * 7 + 1
-    this.scale = Math.random() * 1 + 1
+    if(this.position !== 'fixed'){
+      let scrollHeight = Math.max(
+        document.body.scrollHeight, document.documentElement.scrollHeight,
+        document.body.offsetHeight, document.documentElement.offsetHeight,
+        document.body.clientHeight, document.documentElement.clientHeight
+      )
+      this.translateX = Math.random() * window.innerWidth
+      this.duration = Math.random() * 7 + 1
+      this.scale = Math.random() * 1 + 1
 
 
-    if(Math.round(Math.random() * 10 ) % 2  === 0){
-      this.translateY = Math.random() * window.innerHeight 
+      if(Math.round(Math.random() * 10 ) % 2  === 0){
+        this.translateY = Math.random() * window.innerHeight 
 
-      this.classChange = 'fixed'
-    } else {
-      this.translateY = Math.random() * scrollHeight 
-      this.classChange = null
+        this.classChange = 'fixed'
+      } else {
+        this.translateY = Math.random() * scrollHeight 
+        this.classChange = null
+
+      }
+
+      window.setInterval(()=> {
+
+        this.scale = 0
+        window.setTimeout(() => {
+        // this.translateX = Math.random() * window.innerWidth 
+        this.translateY = Math.random() * scrollHeight
+        }, 350)
+        window.setTimeout(() => {
+          this.scale = Math.random() * 1 + 1
+          if(Math.round(Math.random() * 10 )  %  2 == 0){
+            this.translateY = Math.random() * window.innerHeight 
+            this.classChange = 'fixed'
+          } else {
+            this.translateY = Math.random() * scrollHeight 
+            this.classChange = null
+
+          }
+        }, 650)
+
+      }, Math.random() * 20000 + 8000)
+    }else {
+      this.classChange = 'positionned'
+      this.scale = 1.3
+      
 
     }
-
-    window.setInterval(()=> {
-
-      this.scale = 0
-      window.setTimeout(() => {
-      // this.translateX = Math.random() * window.innerWidth 
-      this.translateY = Math.random() * scrollHeight
-      }, 350)
-      window.setTimeout(() => {
-        this.scale = Math.random() * 1 + 1
-        if(Math.round(Math.random() * 10 )  %  2 == 0){
-          this.translateY = Math.random() * window.innerHeight 
-          this.classChange = 'fixed'
-        } else {
-          this.translateY = Math.random() * scrollHeight 
-          this.classChange = null
-
-        }
-      }, 650)
-
-    }, Math.random() * 20000 + 8000)
   },
 };
 </script>
@@ -97,6 +105,13 @@ export default {
 }
 .price.fixed {
   position: fixed;
+}
+.price.positionned {
+  position: fixed;
+  left: 26vw;
+  bottom: 8vh;
+  top: unset;
+  z-index: 12;
 }
 .price__text {
   position: absolute;

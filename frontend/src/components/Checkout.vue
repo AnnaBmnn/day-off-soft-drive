@@ -20,7 +20,7 @@
             <ComponentCountdown />
 
             <p class="checkout__date ">
-              <span class="checkout__text--instruction">Bid end date : 10 june at 16:00</span>.
+              <span class="checkout__text--instruction">Bid end date : 18 july at 16:00</span>.
             </p>
 
             <p class="checkout__text--instruction">Highest bid : <span class="">{{minAmount}}.00</span> $</p>

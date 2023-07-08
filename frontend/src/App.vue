@@ -3,7 +3,7 @@
     <Checkout-Item />
 
     <!-- <div class="mask"></div> -->
-    <ComponentCard @closeModalEvent="this.openModal = false" title="[̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅] Place a bid [̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]" :openModal="openModal">
+    <ComponentCard class="app__card" @closeModalEvent="this.openModal = false" title="[̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅] Place a bid [̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]" :openModal="openModal">
       <Checkout-Payment :minAmount="bid" v-on:onHigherBid="updateBidAmount"  />
     </ComponentCard>
     <ComponentWindow95  >
@@ -12,9 +12,8 @@
     <ComponentChangeBackground v-on:onBgChange="onBgChange" />
     <!-- <ComponentPrice :priceValue="bid" /> -->
     <!-- <ComponentPrice :priceValue="bid" /> -->
-    <!-- <ComponentPrice :priceValue="bid" /> -->
-    <ComponentPrice :priceValue="bid" /> 
-    <!-- <ComponentAdd @openModalEvent="this.openModal = true" /> -->
+    <ComponentPrice :priceValue="bid" position="fixed" />
+    <!-- <ComponentPrice :priceValue="bid" />  -->
     <!-- <ComponentPrice :priceValue="bid" /> -->
     <!-- <ComponentAdd @openModalEvent="this.openModal = true" /> -->
     <!-- <ComponentPrice :priceValue="bid" /> -->
@@ -26,6 +25,11 @@
     <Hero />
 
     <SectionContent />
+    <SectionPlug @openModalEvent="this.openModal = true" />
+
+    <SectionCTA >
+      <ComponentAdd rotateProps="5" type="animated" @openModalEvent="this.openModal = true" />
+    </SectionCTA>
 
     <!-- <ComponentMarquee  />  -->
     <!-- <ComponentMarquee  />  -->
@@ -52,12 +56,14 @@ import ComponentThreejs from './components/ComponentThreejs.vue';
 import ComponentWindow95 from './components/Window95.vue';
 import ComponentPrice from './components/Price.vue';
 import ComponentDeco from './components/Deco.vue';
-// import ComponentAdd from './components/Add.vue';
+import ComponentAdd from './components/Add.vue';
+import SectionPlug from './components/SectionPlug.vue';
 // import ComponentAddBig from './components/AddBig.vue';
 // import AddBigPlug from './components/AddBigPlug.vue';
 // import ComponentMarquee from './components/Marquee.vue';
 import SectionContent from './components/SectionContent.vue';
 import Hero from './components/Hero.vue';
+import SectionCTA from './components/SectionCTA.vue';
 
 import gql from "graphql-tag";
 
@@ -73,13 +79,16 @@ export default {
     ComponentWindow95,
     ComponentPrice,
     ComponentDeco,
-    // ComponentAdd,
+    ComponentAdd,
     // ComponentAddBig,
     // AddBigPlug,
     // ComponentMarquee,
     SectionContent,
     ComponentThreejs,
-    Hero
+    Hero,
+    SectionCTA,
+    SectionPlug,
+
     // ComponentCardSoftDrive
   },
   computed: {
@@ -202,6 +211,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
 }
 div {
   box-sizing: border-box;
@@ -270,5 +280,8 @@ h1 {
   top: 0;
   left: 0;
 }
-
+.app__card {
+  z-index: 100!important;
+  position: fixed!important;
+}
 </style>
