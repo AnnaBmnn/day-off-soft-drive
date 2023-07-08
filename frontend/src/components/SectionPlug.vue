@@ -2,6 +2,7 @@
 <section  :style="cssProps"  class="section-plug">
     <div class="section-plug__intersection-observer">
         <img src="~@/assets/official/plug-yellow.png" alt="" class="section-plug__plug">
+        <ComponentAdd @openModalEvent="$emit('openModalEvent')" class="add out add--7" rotateProps="-5" scaleProps="5" type="in-out" />
         <ComponentAdd @openModalEvent="$emit('openModalEvent')" class="add out add--11" rotateProps="5" scaleProps="0.5" type="in-out" />
         <ComponentAdd @openModalEvent="$emit('openModalEvent')" class="add out add--5" rotateProps="4" scaleProps="4" type="in-out" />
         <ComponentAdd @openModalEvent="$emit('openModalEvent')" class="add out add--2" rotateProps="-3" scaleProps="5" type="in-out" />
@@ -9,10 +10,10 @@
         <ComponentAdd @openModalEvent="$emit('openModalEvent')" class="add out add--3" rotateProps="10" scaleProps="2" type="in-out" />
         <ComponentAdd @openModalEvent="$emit('openModalEvent')" class="add out add--4" rotateProps="-7" scaleProps="0.5" type="in-out" />
         <ComponentAdd @openModalEvent="$emit('openModalEvent')" class="add out add--6" rotateProps="-20" scaleProps="2" type="in-out" />
-        <ComponentAdd @openModalEvent="$emit('openModalEvent')" class="add out add--7" rotateProps="-20" scaleProps="3" type="in-out" />
         <ComponentAdd @openModalEvent="$emit('openModalEvent')" class="add out add--8" rotateProps="-5" scaleProps="2" type="in-out" />
         <ComponentAdd @openModalEvent="$emit('openModalEvent')" class="add out add--9" rotateProps="5" scaleProps="1" type="in-out" />
         <ComponentAdd @openModalEvent="$emit('openModalEvent')" class="add out add--10" rotateProps="-7" scaleProps="4" type="in-out" />
+        <ComponentAdd @openModalEvent="$emit('openModalEvent')" class="add out add--12" rotateProps="-7" scaleProps="0.8" type="in-out" />
     </div>
 </section>
 </template>
@@ -60,16 +61,6 @@ export default {
             entry.target.classList.remove('in')
             entry.target.classList.add('out')
         }
-        console.log(entry.target)
-        // Each entry describes an intersection change for one observed
-        // target element:
-        //   entry.boundingClientRect
-        //   entry.intersectionRatio
-        //   entry.intersectionRect
-        //   entry.isIntersecting
-        //   entry.rootBounds
-        //   entry.target
-        //   entry.time
       });
     };
     let observer = new IntersectionObserver(callback, options);
@@ -150,17 +141,16 @@ export default {
     left: 30vw;
 }
 .add--7 {
-
-    top: 100vh;
-    left: 10vw;
+    top: 96vh;
+    left: 21vw;
 }
 .add--8 {
     top: 120vh;
     left: 50vw;
 }
 .add--9 {
-    top: 38vh;
-    left: 65vw;
+    top: 14vh;
+    left: 49vw;
 }
 .add--10 {
     top: 75vh;
@@ -169,5 +159,9 @@ export default {
 .add--11 {
     top: 20vh;
     right: -7vw;
+}
+.add--12 {
+    top: 95vh;
+    left: 35vw;
 }
 </style>

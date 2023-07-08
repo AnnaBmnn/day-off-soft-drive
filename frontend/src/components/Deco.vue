@@ -1,22 +1,24 @@
 <template>
 <div class="">
-    <img src="~@/assets/official/heart1.png" alt="" class="deco deco--heart-2">
-    <img src="~@/assets/official/heart1.png" alt="" class="deco deco--heart-1">
-    <img src="~@/assets/official/heart1.png" alt="" class="deco deco--heart-3">
-    <img src="~@/assets/official/yellow-heart.png" alt="" class="deco deco--yellow-heart-1">
-    <img src="~@/assets/official/blue_star.png" alt="" class="deco deco--blue-star-1">
-    <img src="~@/assets/official/blue_star.png" alt="" class="deco deco--blue-star-2">
-    <img src="~@/assets/official/lovefolder.png" alt="" class="deco deco--folder">
-    <img src="~@/assets/official/plug-it-or-hug-it.png" alt="" class="deco deco--plug">
+    <img src="~@/assets/official/heart1.png" alt="" class="deco out deco--heart-2">
+    <img src="~@/assets/official/heart1.png" alt="" class="deco out deco--heart-1">
+    <img src="~@/assets/official/heart1.png" alt="" class="deco out deco--heart-3">
+    <img src="~@/assets/official/yellow-heart.png" alt="" class="deco out deco--yellow-heart-1">
+    <img src="~@/assets/official/blue_star.png" alt="" class="deco out deco--blue-star-1">
+    <img src="~@/assets/official/blue_star.png" alt="" class="deco out deco--blue-star-2">
+    <img src="~@/assets/official/lovefolder.png" alt="" class="deco out deco--folder">
+    <img src="~@/assets/official/plug-it-or-hug-it.png" alt="" class="deco out deco--plug">
 
-    <img src="~@/assets/official/star-red.png" alt="" class="deco deco--star-1">
-    <img src="~@/assets/official/star-pink.png" alt="" class="deco deco--star-2">
-    <img src="~@/assets/official/star-red.png" alt="" class="deco deco--star-3">
+    <img src="~@/assets/official/star-red.png" alt="" class="deco out deco--star-1">
+    <img src="~@/assets/official/star-pink.png" alt="" class="deco out deco--star-2">
+    <img src="~@/assets/official/star-red.png" alt="" class="deco out deco--star-3">
 
-    <img src="~@/assets/official/star-pink.png" alt="" class="deco deco--star-4">
-    <img src="~@/assets/official/star-pink.png" alt="" class="deco deco--star-7">
-    <img src="~@/assets/official/purple-heart.png" alt="" class="deco deco--star-5">
-    <img src="~@/assets/official/star-red.png" alt="" class="deco deco--star-6">
+    <img src="~@/assets/official/star-pink.png" alt="" class="deco out deco--star-4">
+    <img src="~@/assets/official/star-pink.png" alt="" class="deco out deco--star-7">
+    <img src="~@/assets/official/purple-heart.png" alt="" class="deco out deco--star-5">
+    <img src="~@/assets/official/star-red.png" alt="" class="deco out deco--star-6">
+
+    <img src="~@/assets/official/drive.webp" alt="" class="deco out deco--drive">
 
     <p class="deco__text">Launching <br> the unhardest hard disk <br> on the market!!!</p>
 </div>
@@ -40,9 +42,35 @@ export default {
     }
   },
   mounted() {
-
-
-
+    const threshold = []
+    for(let i = 0; i < 20; i ++){
+      threshold.push(i / 20)
+    }
+    let options = {
+      // threshold: [0.4, 0.9],
+      rootMargin: "60px"
+    //   threshold: [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.8, 0.85, 0.9, 0.95, 1],
+    };
+    let callback = (entries) => {
+      entries.forEach((entry) => {
+        if(entry.isIntersecting){
+            entry.target.classList.remove('out')
+            entry.target.classList.add('in')
+        }else {
+          if(!entry.isVisible){
+            entry.target.classList.remove('in')
+            entry.target.classList.add('out')
+          }
+        }
+      });
+    };
+    let observer = new IntersectionObserver(callback, options);
+    const targets = document.querySelectorAll(".deco");
+    targets.forEach((target) => {
+        if(target){
+            observer.observe(target)
+        }   
+    })
   },
 };
 </script>
@@ -51,7 +79,6 @@ export default {
 .deco {
     position: fixed;
 }
-
 .deco--plug {
     left: 4vw;
     top: 24vh;
@@ -79,6 +106,7 @@ export default {
     filter: blur(12px);
     /* transform: rotate(-15deg); */
     /* z-index: 1; */
+    transition-delay: 0!important;
 }
 .deco--heart-2 {
     left: 20vw;
@@ -107,7 +135,7 @@ export default {
     /* animation: scale 1200ms ease-in-out infinite alternate-reverse; */
 }
 .deco--blue-star-1 {
-  position: absolute;
+  /* position: absolute; */
     left: 11vw;
     top: 11vh;
     width: 6vh;
@@ -117,7 +145,7 @@ export default {
     /* filter: blur(0.5px); */
 }
 .deco--blue-star-2 {
-    position: absolute;
+    /* position: absolute; */
     left: 8vw;
     top: 16vh;
     width: 8vh;
@@ -130,6 +158,9 @@ export default {
     top: 18vh;
     left: 33.5vw;
     width: 5vw;
+    transition-delay: 0.3s!important;
+    transition-duration: 0.6s!important;
+    transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1)!important;
     /* animation: scale 600ms 00ms ease-in-out infinite alternate-reverse; */
 
 }
@@ -137,12 +168,19 @@ export default {
     top: 25vh;
     left: 35vw;
     width: 5vw;
+    transition-delay: 0.6s!important;
+    transition-duration: 0.6s!important;
+    transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1)!important;
+
     /* animation: scale 600ms 200ms ease-in-out infinite alternate-reverse; */
 }
 .deco--star-3 {
     top: 32.5vh;
     left: 32vw;
     width: 5vw;
+    transition-delay: 0.8s!important;
+    transition-duration: 0.6s!important;
+    transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1)!important;
     /* animation: scale 600ms 400ms ease-in-out infinite alternate-reverse; */
 }
 .deco--star-4 {
@@ -178,6 +216,13 @@ export default {
     width: 5vw;
     /* animation: scale 600ms 400ms ease-in-out infinite alternate-reverse; */
 }
+.deco--drive {
+  position: absolute;
+
+  top: 15%;
+  width: 30vw;
+  left: 0;
+}
 .deco__text {
     backdrop-filter: blur(2px);
     position: fixed;
@@ -210,5 +255,13 @@ export default {
   100% {
     transform:  scale(1.05);
   }
+}
+.deco.out {
+  transition:  transform 0.3s  cubic-bezier(.34,1.56,.6,1.3) ;
+  transform: scale(0);
+}
+.deco.in {
+  transition:  transform 0.3s  cubic-bezier(.34,1.56,.6,1.3) 1s;
+    /* opacity: 1; */
 }
 </style>
