@@ -264,4 +264,30 @@ export default {
   transition:  transform 0.3s  cubic-bezier(.34,1.56,.6,1.3) 1s;
     /* opacity: 1; */
 }
+@media screen and (max-width: 1030px) {
+  .deco--plug {
+    width: 20vh;
+  }
+  .deco--heart-1 {
+    display: none;
+  }
+  .deco--heart-3 {
+    left: 5vw;
+    bottom: 7vh;
+    width: 30vh;
+    filter: blur(6px);
+  }
+  .deco--folder {
+    width: 14vh;
+  }
+  .deco--drive {
+    top: 16%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .deco--heart-2 {
+    display: none;
+  }
+  
+}
 </style>

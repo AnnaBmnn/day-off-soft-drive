@@ -85,6 +85,9 @@ export default {
     }else {
       this.classChange = 'positionned'
       this.scale = 1.3
+      if(window.innerWidth){
+        this.scale = 0.8
+      }
       
 
     }
@@ -112,6 +115,13 @@ export default {
   bottom: 8vh;
   top: unset;
   z-index: 12;
+}
+@media screen and (max-width: 800px) {
+  .price.positionned {
+    left: unset;
+    right: 5vw;
+    bottom: -2vh;
+  }
 }
 .price__text {
   position: absolute;

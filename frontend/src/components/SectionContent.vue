@@ -64,5 +64,11 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+}
+@media screen and (max-width: 800px) {
+  .section-content {
+    z-index: 2;
+  }
 }
 </style>

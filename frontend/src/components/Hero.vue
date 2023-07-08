@@ -62,10 +62,12 @@ export default {
   flex-direction: column;
   align-items: flex-end;
 }
+
 .section-hero__logo {
   /* position: absolute; */
   width: 100%;
   margin-left: auto;
+  
 }
 
 .section-hero__text {
@@ -106,6 +108,33 @@ export default {
   }
   100% {
     transform: translate(-25%, -80%) rotateY(-360deg);
+  }
+}
+
+@media screen and (max-width: 1030px) {
+  .section-hero {
+    width: 50%;
+  }
+  .section-hero__logo {
+    margin-top: 20vh;
+  }
+  .section-hero__text {
+    margin-top: 32vh;
+  }
+}
+@media screen and (max-width: 800px) {
+  .section-hero {
+    width: 65%;
+  }
+  .section-hero__logo {
+    margin-top: 0;
+    width: 90%;
+    transform: translateX(-3%);
+    margin-top: 0vh;
+
+  }
+  .section-hero__text {
+    margin-top: 50vh;
   }
 }
 </style>

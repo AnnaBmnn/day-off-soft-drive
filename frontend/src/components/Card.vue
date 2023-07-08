@@ -1,7 +1,7 @@
 <template>
 <div v-show="openModalData"  :style="cssProps"  class="card wizz">
   <div class="card__container">
-    <header class="card__header" @mousedown="onMouseDown" >
+    <header class="card__header" @mousedown="onMouseDown" @touchStart="onMouseDown" >
       <h2 class="card__title">{{title}} </h2>
       <button class="card__button" @click="onClick">
         <div class="card__button-container">
@@ -62,7 +62,9 @@ export default {
     this.translateY = Math.random() * window.innerHeight * 0.7
     this.delay = Math.random() * 10
     window.addEventListener('mousemove', this.onDrag)
+    window.addEventListener('touchmove', this.onDrag)
     window.addEventListener('mouseup', this.onMouseUp)
+    window.addEventListener('touchend', this.onMouseUp)
 
   },
   methods: {

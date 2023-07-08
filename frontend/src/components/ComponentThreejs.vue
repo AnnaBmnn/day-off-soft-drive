@@ -39,7 +39,7 @@ export default {
         // Controls
         this.controls = new OrbitControls(this.camera, this.$refs.canvas)
         this.controls.enableDamping = true
-        this.controls.maxDistance = 10
+        this.controls.maxDistance = 3
         this.controls.minDistance = 0.1
 
         this.clock = new THREE.Clock()
@@ -127,7 +127,11 @@ export default {
                     // this.gltf.material.wireframe = false
                     // this.gltf.rotation.x = Math.PI * 0.5
                     this.gltf.rotation.y = -Math.PI * 1.5
-                    this.gltf.scale.set(3, 3, 3)
+                    if(this.sizes.width > 800){
+                        this.gltf.scale.set(3, 3, 3)
+                    }else {
+                        this.gltf.scale.set(2.4, 2.4, 2.4)
+                    }
                     this.scene.add(this.gltf)
                 },
                 (progress) =>
@@ -219,6 +223,10 @@ canvas {
     /* right: 0; */
     z-index: 1;
     width: 50%;
-
+}
+@media screen and (max-width: 800px) {
+    canvas {
+        width: 100%;
+    }
 }
 </style>

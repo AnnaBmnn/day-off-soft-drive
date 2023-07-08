@@ -164,4 +164,9 @@ export default {
     top: 95vh;
     left: 35vw;
 }
+@media screen and (max-width: 800px) {
+  .section-plug {
+    z-index: 2;
+  }
+}
 </style>
