@@ -1,5 +1,5 @@
 <template>
-<div v-show="openModalData"  :style="cssProps"  class="card wizz">
+<div v-show="openModalData" ref="card"  :style="cssProps"  class="card wizz">
   <div class="card__container">
     <header class="card__header" @mousedown="onMouseDown" @touchstart="onMouseDown" >
       <h2 class="card__title">{{title}} </h2>
@@ -59,7 +59,7 @@ export default {
     this.openModalData = this.openModal
     this.percentage = (Math.random() * 40) + 20
     this.translateX = Math.random() * window.innerWidth * 0.7
-    this.translateY = Math.random() * window.innerHeight * 0.7
+    this.translateY = Math.random() * window.innerHeight * 0.8 + 100
     this.delay = Math.random() * 10
     window.addEventListener('mousemove', this.onDrag)
     window.addEventListener('touchmove', this.onDrag)
@@ -70,21 +70,44 @@ export default {
   methods: {
     onClick(){
       this.openModalData = false
-      this.$emit('closeModalEvent')
     },
     onMouseDown(e){
       // e.preventDefault()
-      this.offsetX = e.offsetX
-      this.offsetY = e.offsetY
+
+      if(e.type == 'touchstart' || e.type == 'touchmove' || e.type == 'touchend' || e.type == 'touchcancel'){
+        const event = (typeof e.originalEvent === 'undefined') ? e : e.originalEvent;
+        const touch = event.touches[0] || event.changedTouches[0]
+
+        const boundingClientRect = this.$refs.card.getBoundingClientRect()
+        console.log(boundingClientRect)
+        
+        this.offsetX = touch.pageX - boundingClientRect.left
+        this.offsetY = touch.pageY - boundingClientRect.top
+      } else if (e.type == 'mousedown' || e.type == 'mouseup' || e.type == 'mousemove' || e.type == 'mouseover'|| e.type=='mouseout' || e.type=='mouseenter' || e.type=='mouseleave') {
+        this.offsetX = e.offsetX
+        this.offsetY = e.offsetY
+      }
       this.isDrag = true
+
     },
     onMouseUp(){
       this.isDrag = false
     },
     onDrag(e){
       if(this.isDrag){
-        this.translateX = e.x - this.offsetX
-        this.translateY = e.y - this.offsetY
+        if(e.type == 'touchstart' || e.type == 'touchmove' || e.type == 'touchend' || e.type == 'touchcancel'){
+            const event = (typeof e.originalEvent === 'undefined') ? e : e.originalEvent;
+            const touch = event.touches[0] || event.changedTouches[0]
+            this.translateX = touch.pageX - this.offsetX
+            this.translateY = touch.pageY - this.offsetY
+
+        } else if (e.type == 'mousedown' || e.type == 'mouseup' || e.type == 'mousemove' || e.type == 'mouseover'|| e.type=='mouseout' || e.type=='mouseenter' || e.type=='mouseleave') {
+            this.translateX = e.x - this.offsetX
+            this.translateY = e.y - this.offsetY
+        }
+        // console.log(e)
+        // this.translateX = e.x - this.offsetX
+        // this.translateY = e.y - this.offsetY
       }
     }
   },
