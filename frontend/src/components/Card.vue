@@ -59,7 +59,7 @@ export default {
     this.openModalData = this.openModal
     this.percentage = (Math.random() * 40) + 20
     this.translateX = Math.random() * window.innerWidth * 0.7
-    this.translateY = Math.random() * window.innerHeight * 0.8 + 100
+    this.translateY = Math.random() * window.innerHeight * 0.6 + 100
     this.delay = Math.random() * 10
     window.addEventListener('mousemove', this.onDrag)
     window.addEventListener('touchmove', this.onDrag)
@@ -72,14 +72,13 @@ export default {
       this.openModalData = false
     },
     onMouseDown(e){
-      // e.preventDefault()
+      e.preventDefault()
 
       if(e.type == 'touchstart' || e.type == 'touchmove' || e.type == 'touchend' || e.type == 'touchcancel'){
         const event = (typeof e.originalEvent === 'undefined') ? e : e.originalEvent;
         const touch = event.touches[0] || event.changedTouches[0]
 
         const boundingClientRect = this.$refs.card.getBoundingClientRect()
-        console.log(boundingClientRect)
         
         this.offsetX = touch.pageX - boundingClientRect.left
         this.offsetY = touch.pageY - boundingClientRect.top
@@ -94,6 +93,8 @@ export default {
       this.isDrag = false
     },
     onDrag(e){
+      e.preventDefault()
+
       if(this.isDrag){
         if(e.type == 'touchstart' || e.type == 'touchmove' || e.type == 'touchend' || e.type == 'touchcancel'){
             const event = (typeof e.originalEvent === 'undefined') ? e : e.originalEvent;
@@ -105,9 +106,6 @@ export default {
             this.translateX = e.x - this.offsetX
             this.translateY = e.y - this.offsetY
         }
-        // console.log(e)
-        // this.translateX = e.x - this.offsetX
-        // this.translateY = e.y - this.offsetY
       }
     }
   },
