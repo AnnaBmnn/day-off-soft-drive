@@ -1,7 +1,7 @@
 <template>
 <div v-show="openModalData"  :style="cssProps"  class="card wizz">
   <div class="card__container">
-    <header class="card__header" @mousedown="onMouseDown" @touchStart="onMouseDown" >
+    <header class="card__header" @mousedown="onMouseDown" @touchstart="onMouseDown" >
       <h2 class="card__title">{{title}} </h2>
       <button class="card__button" @click="onClick">
         <div class="card__button-container">
