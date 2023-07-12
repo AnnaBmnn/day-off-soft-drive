@@ -61,6 +61,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  transform: translate3d(0, 0, 3px);
 }
 
 .section-hero__logo {

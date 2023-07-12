@@ -168,10 +168,10 @@ img {
 
 @keyframes rotate {
   0%{
-    transform: scale(var(--scale)) rotateY(0deg);
+    transform: scale(var(--scale)) rotateY(0deg) translate3d(0, 0, 2px);
   }
   100% {
-    transform: scale(var(--scale)) rotateY(360deg);
+    transform: scale(var(--scale)) rotateY(360deg) translate3d(0, 0, 2px);
   }
 }
 </style>

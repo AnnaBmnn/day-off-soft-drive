@@ -12,7 +12,7 @@
     <!-- <ComponentChangeBackground v-on:onBgChange="onBgChange" /> -->
     <!-- <ComponentPrice :priceValue="bid" /> -->
     <!-- <ComponentPrice :priceValue="bid" /> -->
-    <ComponentPrice :priceValue="bid" position="fixed" />
+    <!-- <ComponentPrice :priceValue="bid" position="fixed" /> -->
     <!-- <ComponentPrice :priceValue="bid" />  -->
     <!-- <ComponentPrice :priceValue="bid" /> -->
     <!-- <ComponentAdd @openModalEvent="this.openModal = true" /> -->
@@ -54,7 +54,7 @@ import ComponentCard from './components/Card.vue';
 // import ComponentChangeBackground from './components/ChangeBg.vue';
 import ComponentThreejs from './components/ComponentThreejs.vue';
 import ComponentWindow95 from './components/Window95.vue';
-import ComponentPrice from './components/Price.vue';
+// import ComponentPrice from './components/Price.vue';
 import ComponentDeco from './components/Deco.vue';
 import ComponentAdd from './components/Add.vue';
 import SectionPlug from './components/SectionPlug.vue';
@@ -73,11 +73,10 @@ export default {
   components: {
     CheckoutPayment,
     CheckoutItem,
-    //ComponentThreejs,
     ComponentCard,
     // ComponentChangeBackground,
     ComponentWindow95,
-    ComponentPrice,
+    // ComponentPrice,
     ComponentDeco,
     ComponentAdd,
     // ComponentAddBig,

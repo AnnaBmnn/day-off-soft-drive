@@ -120,7 +120,7 @@ export default {
   position: absolute;
   top: 0%;
   left: 0%;
-  transform: translate(var(--translateX), var(--translateY));
+  transform: translate3d(var(--translateX), var(--translateY), 10px);
   width: 47vw;
   min-width: 350px;
   min-height: 475px;

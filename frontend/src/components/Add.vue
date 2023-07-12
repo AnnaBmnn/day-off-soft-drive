@@ -148,10 +148,10 @@ export default {
 }
 @keyframes scale {
   0%{
-    transform: rotate(var(--rotateProps)) scale(1.5) ;
+    transform: rotate(var(--rotateProps)) scale(1.5) translate3d(0, 0, 2px);
   }
   100% {
-    transform: rotate(var(--rotateProps)) scale(1.62);
+    transform: rotate(var(--rotateProps)) scale(1.62) translate3d(0, 0, 2px);
   }
 }
 

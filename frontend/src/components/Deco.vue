@@ -78,6 +78,8 @@ export default {
 <style scoped>
 .deco {
     position: fixed;
+  transform: translate3d(0, 0, 2px);
+
 }
 .deco--plug {
     left: 4vw;
@@ -92,8 +94,9 @@ export default {
     left: 2vw;
     top: 50vh;
     width: 18vh;
-    /* z-index: 2; */
+    z-index: 4;
     filter: blur(1px);
+      transform: translate3d(0, 0, 2px);
 
 }
 
@@ -105,7 +108,7 @@ export default {
     opacity: 0.8;
     filter: blur(12px);
     /* transform: rotate(-15deg); */
-    /* z-index: 1; */
+    z-index: 0;
     transition-delay: 0!important;
 }
 .deco--heart-2 {
@@ -114,7 +117,8 @@ export default {
     width: 60vh;
     opacity: 0.8;
     filter: blur(14px);
-    transform: rotate(20deg);
+    z-index: 0;
+    transform: rotate(20deg) translate3d(0, 0, 1px);
     /* z-index: 1; */
 }
 .deco--heart-3 {
@@ -123,14 +127,15 @@ export default {
     width: 30vh;
     opacity: 0.8;
     filter: blur(4px);
-    transform: rotate(30deg);
+    z-index: 0;
+    transform: rotate(30deg) translate3d(0, 0, 1px);
     /* z-index: 1; */
 }
 .deco--yellow-heart-1 {
     left: 4vw;
     top: 22vh;
     width: 6vh;
-    transform: rotate(-35deg);
+    transform: rotate(-35deg) translate3d(0, 0, 1px);
     filter: blur(1.5px);
     /* animation: scale 1200ms ease-in-out infinite alternate-reverse; */
 }
@@ -242,23 +247,23 @@ export default {
 }
 @keyframes rotate {
   0%{
-    transform:  rotateY(0deg);
+    transform:  rotateY(0deg) translate3d(0, 0, 1px);  
   }
   100% {
-    transform:  rotateY(360deg);
+    transform:  rotateY(360deg) translate3d(0, 0, 1px);
   }
 }
 @keyframes scale {
   0%{
-    transform:  scale(1);
+    transform:  scale(1) translate3d(0, 0, 1px);
   }
   100% {
-    transform:  scale(1.05);
+    transform:  scale(1.05) translate3d(0, 0, 1px);
   }
 }
 .deco.out {
   transition:  transform 0.3s  cubic-bezier(.34,1.56,.6,1.3) ;
-  transform: scale(0);
+  transform: scale(0) translate(0, 0, 1px);
 }
 .deco.in {
   transition:  transform 0.3s  cubic-bezier(.34,1.56,.6,1.3) 1s;
@@ -278,6 +283,7 @@ export default {
     filter: blur(6px);
   }
   .deco--folder {
+
     width: 14vh;
   }
   .deco--drive {
