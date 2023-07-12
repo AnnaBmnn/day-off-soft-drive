@@ -134,7 +134,17 @@ export default {
 
   }
   .section-hero__text {
-    margin-top: 50vh;
+    margin-top: 70vh;
+  }
+}
+@media screen and (max-width: 500px) {
+  .section-hero {
+    width: 100%;
+  }
+  .section-hero__logo {
+    width: 80%;
+    transform: translateX(-7.5%);
+
   }
 }
 </style>

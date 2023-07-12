@@ -9,7 +9,7 @@
     <ComponentWindow95  >
     </ComponentWindow95>
 
-    <ComponentChangeBackground v-on:onBgChange="onBgChange" />
+    <!-- <ComponentChangeBackground v-on:onBgChange="onBgChange" /> -->
     <!-- <ComponentPrice :priceValue="bid" /> -->
     <!-- <ComponentPrice :priceValue="bid" /> -->
     <ComponentPrice :priceValue="bid" position="fixed" />
@@ -51,7 +51,7 @@
 import CheckoutPayment from './components/Checkout.vue';
 import CheckoutItem from './components/Item.vue';
 import ComponentCard from './components/Card.vue';
-import ComponentChangeBackground from './components/ChangeBg.vue';
+// import ComponentChangeBackground from './components/ChangeBg.vue';
 import ComponentThreejs from './components/ComponentThreejs.vue';
 import ComponentWindow95 from './components/Window95.vue';
 import ComponentPrice from './components/Price.vue';
@@ -75,7 +75,7 @@ export default {
     CheckoutItem,
     //ComponentThreejs,
     ComponentCard,
-    ComponentChangeBackground,
+    // ComponentChangeBackground,
     ComponentWindow95,
     ComponentPrice,
     ComponentDeco,

@@ -75,4 +75,15 @@ export default {
   -webkit-text-stroke: 1.5px rgb(84, 152, 255);
   text-stroke: 1.5px rgb(84, 152, 255);
 }
+@media screen and (max-width: 800px) {
+  .top {
+    transform: translateY(0);
+    height: 40px;
+    max-width: 40px;
+    word-break: break-all;
+    line-height: 1;
+    vertical-align: top;
+  }
+}
+
 </style>

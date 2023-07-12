@@ -123,6 +123,14 @@ export default {
     bottom: -2vh;
   }
 }
+@media screen and (max-width: 500px) {
+  .price.positionned {
+    left: unset;
+    right: -2vw;
+    bottom: -5vh;
+    z-index: 0;
+  }
+}
 .price__text {
   position: absolute;
   top: 52%;

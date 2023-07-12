@@ -288,6 +288,43 @@ export default {
   .deco--heart-2 {
     display: none;
   }
-  
+  .deco--drive {
+    top: 22%;
+    width: 54vw;
+  }
+  .deco__text {
+    z-index: 5;
+  }
+  .deco--star-1 , .deco--star-2 , .deco--star-3 , .deco--star-4 , .deco--star-5 , .deco--star-6 {
+    width: 10vw;
+  }
+}
+@media screen and (max-width: 500px) {
+
+  .deco--star-1 , .deco--star-2 , .deco--star-3 , .deco--star-4 , .deco--star-5 , .deco--star-6 {
+    width: 20vw;
+    transform: translateX(5vw);
+  }
+
+  .deco--star-1 , .deco--star-2 , .deco--star-3 {
+    width: 20vw;
+    transform: translateX(43vw) translateY(8vh);
+  }
+  .deco__text {
+    bottom: unset;
+    top: 76vh;
+    left: 2vh;
+    position: absolute;
+  }
+  .deco--drive {
+    top: 24%;
+    width: 90vw;
+    z-index: 5;
+  }
+  .deco--plug {
+    left: 2vw;
+    top: 26vh;
+    width: 30vh;
+  }
 }
 </style>

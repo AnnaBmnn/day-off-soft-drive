@@ -3,9 +3,10 @@
   <div class="card__container">
     <header class="card__header" @mousedown="onMouseDown" @touchstart="onMouseDown" >
       <h2 class="card__title">{{title}} </h2>
-      <button class="card__button" @click="onClick">
-        <div class="card__button-container">
+      <button ref="button" class="card__button" @click="onClick">
+        <div ref="buttoncontainer" class="card__button-container">
           <img
+            ref="icon"
             class="card__button-icon"
             src="~@/assets/icons/icon-close.svg"
             alt="icon x for closing window"
@@ -72,8 +73,9 @@ export default {
       this.openModalData = false
     },
     onMouseDown(e){
-      e.preventDefault()
-
+      if(e.target !== this.$refs.button && e.target !== this.$refs.buttoncontainer && e.target !== this.$refs.icon  ){
+        e.preventDefault()
+      }
       if(e.type == 'touchstart' || e.type == 'touchmove' || e.type == 'touchend' || e.type == 'touchcancel'){
         const event = (typeof e.originalEvent === 'undefined') ? e : e.originalEvent;
         const touch = event.touches[0] || event.changedTouches[0]
@@ -83,6 +85,7 @@ export default {
         this.offsetX = touch.pageX - boundingClientRect.left
         this.offsetY = touch.pageY - boundingClientRect.top
       } else if (e.type == 'mousedown' || e.type == 'mouseup' || e.type == 'mousemove' || e.type == 'mouseover'|| e.type=='mouseout' || e.type=='mouseenter' || e.type=='mouseleave') {
+
         this.offsetX = e.offsetX
         this.offsetY = e.offsetY
       }
@@ -125,6 +128,11 @@ export default {
   z-index: 15;
   resize: both;
   will-change: transform;
+}
+@media screen and (max-width: 800px) {
+  .card {
+    width: 75vw;
+  }
 }
 .card__container {
   position: absolute;
