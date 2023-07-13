@@ -134,6 +134,32 @@ export default {
     margin-top: 8px;
 }
 
+@media screen and (max-width: 1100px) {
+    .item-folder {
+        width: 20vw;
+        max-width: 20vw;
+        min-width: 20vw;
+        
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .item-folder{
+        width: 25vw;
+        max-width: 25vw;
+        min-width: 25vw;
+
+    }
+}
+@media screen and (max-width: 500px) {
+    .item-folder{
+        width: 33.333vw;
+        max-width: 33.333vw;
+        min-width: 33.333vw;
+
+    }
+}
+
 
 .item-folder__card.hannaMontana {
     background-image: url('https://media.giphy.com/media/fDqGThpuG6vS/giphy.gif') ;

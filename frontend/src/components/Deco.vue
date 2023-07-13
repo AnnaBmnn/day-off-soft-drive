@@ -1,7 +1,7 @@
 <template>
 <div class="">
     <img src="~@/assets/official/heart1.png" alt="" class="deco out deco--heart-2">
-    <img src="~@/assets/official/heart1.png" alt="" class="deco out deco--heart-1">
+    <!-- <img src="~@/assets/official/heart1.png" alt="" class="deco out deco--heart-1"> -->
     <img src="~@/assets/official/heart1.png" alt="" class="deco out deco--heart-3">
     <img src="~@/assets/official/yellow-heart.png" alt="" class="deco out deco--yellow-heart-1">
     <img src="~@/assets/official/blue_star.png" alt="" class="deco out deco--blue-star-1">
@@ -77,9 +77,9 @@ export default {
 
 <style scoped>
 .deco {
-    position: fixed;
+  position: fixed;
   transform: translate3d(0, 0, 2px);
-
+  z-index: 0;
 }
 .deco--plug {
     left: 4vw;
@@ -96,7 +96,7 @@ export default {
     width: 18vh;
     z-index: 4;
     filter: blur(1px);
-      transform: translate3d(0, 0, 2px);
+    transform: translate3d(0, 0, 2px);
 
 }
 
@@ -107,7 +107,6 @@ export default {
     width: 60vh;
     opacity: 0.8;
     filter: blur(12px);
-    /* transform: rotate(-15deg); */
     z-index: 0;
     transition-delay: 0!important;
 }
@@ -128,7 +127,7 @@ export default {
     opacity: 0.8;
     filter: blur(4px);
     z-index: 0;
-    transform: rotate(30deg) translate3d(0, 0, 1px);
+    transform: rotate(30deg) translate3d(0, 0, -1px);
     /* z-index: 1; */
 }
 .deco--yellow-heart-1 {
@@ -146,7 +145,6 @@ export default {
     width: 6vh;
     animation: rotate 5200ms ease-in-out infinite;
 
-    /* transform: rotate(12deg); */
     /* filter: blur(0.5px); */
 }
 .deco--blue-star-2 {
@@ -156,7 +154,6 @@ export default {
     width: 8vh;
     animation: rotate 5000ms ease-in-out infinite;
 
-    /* transform: rotate(12deg); */
     /* filter: blur(0.5px); */
 }
 .deco--star-1 {
@@ -234,7 +231,7 @@ export default {
     bottom: 7vh;
     left: 5vh;
     z-index: 2;
-    transform: rotateZ(-3deg);
+    transform: rotateZ(-3deg) translate3d(0, 0, 1px);
     font-family: sans-serif;
     font-weight: 900;
     text-transform: uppercase;
@@ -287,7 +284,9 @@ export default {
     width: 14vh;
   }
   .deco--drive {
-    top: 16%;
+    top: 17%;
+    width: 45vw;
+    left: 5vw;
   }
 }
 @media screen and (max-width: 800px) {
@@ -295,6 +294,7 @@ export default {
     display: none;
   }
   .deco--drive {
+    left: 0vw;
     top: 22%;
     width: 54vw;
   }
@@ -309,12 +309,12 @@ export default {
 
   .deco--star-1 , .deco--star-2 , .deco--star-3 , .deco--star-4 , .deco--star-5 , .deco--star-6 {
     width: 20vw;
-    transform: translateX(5vw);
+    transform: translateX(5vw) translate3d(0, 0, 2px);
   }
 
   .deco--star-1 , .deco--star-2 , .deco--star-3 {
     width: 20vw;
-    transform: translateX(43vw) translateY(8vh);
+    transform: translate3d(43vw, 8vh, 2px);
   }
   .deco__text {
     bottom: unset;
@@ -325,7 +325,7 @@ export default {
   .deco--drive {
     top: 24%;
     width: 90vw;
-    z-index: 5;
+    z-index: 2;
   }
   .deco--plug {
     left: 2vw;

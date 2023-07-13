@@ -61,6 +61,9 @@ export default {
 .checkout__text--instruction {
   text-transform: none;
   font-size: 12px;
+  display: flex;
+  flex-wrap: nowrap;
+
 }
 .highlight {
   filter: blur(0.1px);
@@ -83,6 +86,11 @@ export default {
     word-break: break-all;
     line-height: 1;
     vertical-align: top;
+  }
+}
+@media screen and (max-width: 800px) {
+  .top {
+    max-width: 39px;
   }
 }
 

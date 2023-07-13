@@ -5,7 +5,6 @@
       <p class="checkout__text--instruction checkout__text--first">
         Place the highest bid to get the softest hard drive on the market
       </p>
-
       <div class="checkout__content">
         <div class="left checkout__column">
           <img class="checkout__img" src="~@/assets/official/teddy_new.png" alt="">
@@ -160,6 +159,7 @@ h3 {
   font-weight: 600;
   font-size: 16px;
 }
+
 .checkout {
   padding: 8px;
   font-family: W95FA;
@@ -310,8 +310,42 @@ h3 {
 
   opacity: 0.5;
 }
+@media screen and (max-width: 1100px) {
+  .checkout__input {
+    max-width: 40%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .checkout__bid {
+    flex-direction: column;
+  }
+  .checkout__text--first {
+    width: 85%;
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .checkout__content {
+    flex-direction: column;
+  }
+  .checkout__img {
+    position: relative;
+    transform: translate(10%, 0%);
+    left: 0;
+  }
+  .checkout__column.left, .checkout__column.right {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    flex-basis: 100%;
+  }
+  .checkout__input {
+    max-width: 90%;
+  }
+  .checkout__text--instruction.checkout__text--first {
+    display: none;
 
-
+  }
+}
 
 #confirmation {
   color: green;

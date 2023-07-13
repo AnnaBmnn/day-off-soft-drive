@@ -100,6 +100,34 @@ export default {
   transform: rotate(10deg);
   pointer-events: none;
 }
+@media screen and (max-width: 1100px) {
+  .section-cta__osito {
+    height: 30vw;
+    bottom: 17vw;
+  }
+  .section-cta__folder {
+    height: 20vw;
+    bottom: 42vw;
+  }
+}
+@media screen and (max-width: 500px) {
+  .section-cta {
+    width: 90%;
+    margin-top: 33vh;
+  }
+  .section-cta__content {
+    display: none;
+  }
+  .section-cta__osito {
+    bottom: 36vw;
+  }
+  .section-cta__folder {
+    bottom: 50vw;
+    height: 25vw;
+    right: 10vw;
+  }
+}
+
 
 @keyframes rotate {
   0%{

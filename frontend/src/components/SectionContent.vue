@@ -1,23 +1,23 @@
 <template>
 <section  :style="cssProps"  class="section-content">
-    <ItemFolder />
-    <ItemFolder />
-    <ItemFolder />
-    <ItemFolder />
-    <ItemFolder />
-    <ItemFolder />
-    <ItemFolder />
-    <ItemFolder />
-    <ItemFolder />
-    <ItemFolder />
-    <ItemFolder />
-    <ItemFolder />
-    <ItemFolder />
-    <ItemFolder />
-    <ItemFolder />
-    <ItemFolder />
-    <ItemFolder />
-    <ItemFolder />
+    <ItemFolder class="section-content__item-folder" />
+    <ItemFolder class="section-content__item-folder" />
+    <ItemFolder class="section-content__item-folder" />
+    <ItemFolder class="section-content__item-folder" />
+    <ItemFolder class="section-content__item-folder" />
+    <ItemFolder class="section-content__item-folder" />
+    <ItemFolder class="section-content__item-folder" />
+    <ItemFolder class="section-content__item-folder" />
+    <ItemFolder class="section-content__item-folder" />
+    <ItemFolder class="section-content__item-folder" />
+    <ItemFolder class="section-content__item-folder" />
+    <ItemFolder class="section-content__item-folder" />
+    <ItemFolder class="section-content__item-folder" />
+    <ItemFolder class="section-content__item-folder" />
+    <ItemFolder class="section-content__item-folder" />
+    <ItemFolder class="section-content__item-folder" />
+    <ItemFolder class="section-content__item-folder" />
+    <ItemFolder class="section-content__item-folder" />
 </section>
 </template>
 
@@ -66,9 +66,34 @@ export default {
     justify-content: space-between;
 
 }
+@media screen and (max-width: 1100px) {
+
+  .section-content__item-folder:nth-last-child(-n+3) {
+      display: none;
+  }
+}
 @media screen and (max-width: 800px) {
   .section-content {
     z-index: 2;
+    backdrop-filter: blur(5px);
+
   }
+  .section-content__item-folder:nth-last-child(-n+3) {
+      display: block;
+  }
+  .section-content__item-folder:nth-last-child(-n+2) {
+      display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .section-content {
+    z-index: 2;
+    backdrop-filter: blur(5px);
+
+  }
+  .section-content__item-folder:nth-last-child(-n+3) {
+    display: none;
+  }
+
 }
 </style>

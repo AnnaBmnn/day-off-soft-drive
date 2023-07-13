@@ -59,7 +59,7 @@ export default {
   mounted() {
     this.openModalData = this.openModal
     this.percentage = (Math.random() * 40) + 20
-    this.translateX = Math.random() * window.innerWidth * 0.7
+    this.translateX =  Math.random() * window.innerWidth * 0.7
     this.translateY = Math.random() * window.innerHeight * 0.6 + 100
     this.delay = Math.random() * 10
     window.addEventListener('mousemove', this.onDrag)
@@ -129,9 +129,27 @@ export default {
   resize: both;
   will-change: transform;
 }
+@media screen and (max-width: 1100px) {
+  .card {
+    width: 67vw;
+  }
+}
 @media screen and (max-width: 800px) {
   .card {
     width: 75vw;
+    min-height: 515px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .card {
+    width: 90vw;
+    min-height: 70vh;
+    min-width: unset;
+    /* transform: translate(5vw, 20vh); */
+
+  }
+  .checkout__text--instruction.checkout__text--first {
+    display: none;
   }
 }
 .card__container {
