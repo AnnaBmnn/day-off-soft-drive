@@ -32,6 +32,8 @@ export default {
         const now = new Date().getTime();
         const distance = new Date(this.countdownDate).getTime() - now;
 
+        console.log({now, distance})
+
         this.days = Math.floor(distance / (1000 * 60 * 60 * 24));
         this.hours = Math.floor(
           (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
