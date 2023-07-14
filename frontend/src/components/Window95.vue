@@ -5,7 +5,7 @@
       <h2 class="window95__title">[̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅] The soft drive [̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]</h2>
     </div>
     <div class="window95__buttons">
-      <button class="window95__button">
+      <button class="window95__button window95__button--reduce ">
         <div class="window95__button-container">
           <img
             class="window95__button-icon"
@@ -14,7 +14,7 @@
           /> 
         </div>
       </button>
-      <button class="window95__button">
+      <button class="window95__button window95__button--full-screen">
         <div class="window95__button-container">
           <img
             class="window95__button-icon"
@@ -291,6 +291,11 @@ body {
   background-size:  120%;
 }
 
+@media screen and (max-width: 500px) {
+  .window95__button--full-screen, .window95__button--reduce {
+    display: none;
+  }
+}
 
 @keyframes shake {
   10%, 90% {

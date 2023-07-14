@@ -333,4 +333,11 @@ export default {
     width: 30vh;
   }
 }
+@media not all and (min-resolution:.001dpcm) { 
+  @media {
+    .deco__text {
+      backdrop-filter: none;
+    }
+  }
+}
 </style>

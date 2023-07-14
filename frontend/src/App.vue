@@ -3,11 +3,12 @@
     <Checkout-Item />
 
     <!-- <div class="mask"></div> -->
+    <ComponentWindow95  >
+    </ComponentWindow95>
     <ComponentCard class="app__card" @closeModalEvent="this.openModal = false" title="[̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅] Place a bid [̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]" :openModal="openModal">
       <Checkout-Payment :minAmount="bid" v-on:onHigherBid="updateBidAmount"  />
     </ComponentCard>
-    <ComponentWindow95  >
-    </ComponentWindow95>
+
 
     <!-- <ComponentChangeBackground v-on:onBgChange="onBgChange" /> -->
     <!-- <ComponentPrice :priceValue="bid" /> -->
