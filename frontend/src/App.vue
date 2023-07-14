@@ -5,6 +5,8 @@
     <!-- <div class="mask"></div> -->
     <ComponentWindow95  >
     </ComponentWindow95>
+    <ComponentThreejs class="window95__img" />
+    <ComponentDeco />
     <ComponentCard class="app__card" @closeModalEvent="this.openModal = false" title="[̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅] Place a bid [̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]" :openModal="openModal">
       <Checkout-Payment :minAmount="bid" v-on:onHigherBid="updateBidAmount"  />
     </ComponentCard>
@@ -36,8 +38,7 @@
     <!-- <ComponentMarquee  />  -->
     <!-- <ComponentAddBig  /> -->
 
-    <ComponentThreejs class="window95__img" />
-    <ComponentDeco />
+
       <!-- <img
         class="window95__img"
         src="~@/assets/peluche.png"
