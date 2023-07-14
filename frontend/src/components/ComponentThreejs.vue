@@ -1,5 +1,6 @@
 <template>
-    <canvas ref="canvas"></canvas>
+
+    <canvas class="threejs" ref="canvas"></canvas>
 </template>
 
 <script>
@@ -208,7 +209,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-canvas {
+.threejs {
     position: fixed;
     top: 0;
     left: 0;
@@ -219,8 +220,14 @@ canvas {
     transform: translate3d(0, 0, 2px);
 }
 @media screen and (max-width: 800px) {
-    canvas {
+    .threejs {
         width: 100%;
+
+    }
+}
+@media screen and (max-width: 500px) {
+    .threejs {
+        z-index: 0;
     }
 }
 </style>
