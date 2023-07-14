@@ -52,6 +52,7 @@ export default {
 
 <style scoped>
 .section-hero {
+  opacity: 0.99;
   width: 60%;
   right: 0;
   position: relative;

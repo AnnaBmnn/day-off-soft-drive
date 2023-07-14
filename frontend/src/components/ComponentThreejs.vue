@@ -228,7 +228,6 @@ export default {
 @media screen and (max-width: 500px) {
     .threejs {
         z-index: 1;
-        opacity: 0.99;
     }
 }
 </style>
