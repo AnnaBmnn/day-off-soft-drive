@@ -12,7 +12,7 @@ export default {
   name: 'ComponentCountdown',
   data() {
     return {
-      countdownDate: '2023-07-18:00:00Z', // Replace with your desired countdown date
+      countdownDate: '2023-07-18T15:00:00Z', // Replace with your desired countdown date
       countdownInterval: null,
       days: 0,
       hours: 0,
@@ -30,7 +30,10 @@ export default {
     startCountdown() {
       this.countdownInterval = setInterval(() => {
         const now = new Date().getTime();
-        const distance = new Date(this.countdownDate).getTime() - now;
+        let distance = new Date(this.countdownDate).getTime() - now;
+        if(typeof distance !== 'number'){
+          distance = new Date(this.countdownDate.replace(/-/g, '/')).getTime() - now;
+        }
 
         console.log({now, distance})
 
