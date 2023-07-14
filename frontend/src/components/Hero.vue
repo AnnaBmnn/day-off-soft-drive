@@ -130,7 +130,7 @@ export default {
   .section-hero__logo {
     margin-top: 0;
     width: 90%;
-    transform: translateX(-3%);
+    transform: translate3d(-3%, 0px, 10px);
     margin-top: 0vh;
 
   }
@@ -148,7 +148,8 @@ export default {
   }
   .section-hero__logo {
     width: 80%;
-    transform: translateX(-7.5%);
+    transform: translate3d(-7.5%, 0px, 10px);
+
 
   }
 }
