@@ -35,7 +35,6 @@ export default {
     };
     let callback = (entries) => {
       entries.forEach((entry) => {
-        console.log(entry)
         this.ratio = entry.intersectionRatio * 2.0
         // Each entry describes an intersection change for one observed
         // target element:
@@ -54,7 +53,6 @@ export default {
   },
   methods: {
     onScroll(e) {
-      console.log(e)
     }
   },
 };

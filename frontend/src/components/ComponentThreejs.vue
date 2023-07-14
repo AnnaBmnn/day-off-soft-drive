@@ -111,7 +111,6 @@ export default {
                 (gltf) =>
                 {
                     this.gltf = gltf.scene
-                    console.log(gltf.scene.children[0])
                     gltf.scene.children[0].material.side = THREE.DoubleSide
 
 
@@ -136,13 +135,9 @@ export default {
                 },
                 (progress) =>
                 {
-                    console.log('progress')
-                    console.log(progress)
                 },
                 (error) =>
                 {
-                    console.log('error')
-                    console.log(error)
                 }
             )
         },
@@ -152,15 +147,12 @@ export default {
                 (texture) =>
                 {
                     this.texture = texture
-                    console.log('loading finished')
                 },
                 () =>
                 {
-                    console.log('loading progressing')
                 },
                 () =>
                 {
-                    console.log('loading error')
                 }
             )
         },

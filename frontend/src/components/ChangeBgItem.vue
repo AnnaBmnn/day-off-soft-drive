@@ -38,7 +38,6 @@ export default {
   methods: {
     onClick(e){
       e.preventDefault()
-      console.log()
       this.$emit('onBgChange', {src: this.src, percentage: this.percentage})
     },
 

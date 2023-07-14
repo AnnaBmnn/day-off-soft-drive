@@ -73,7 +73,6 @@ export default {
       this.isDrag = true
     },
     onMouseUp(){
-      console.log('mouse up')
       this.isDrag = false
     },
     onDrag(e){

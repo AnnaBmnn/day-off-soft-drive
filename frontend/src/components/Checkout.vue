@@ -72,7 +72,6 @@ export default {
   },
   beforeCreate: function() {
     loadScript({ 'client-id': CLIENT_ID, 'intent': 'authorize' }).then((paypal) => {
-      console.log(paypal)
       paypal
         .Buttons({
           style: {
@@ -126,11 +125,10 @@ export default {
       }
     },
     onApprove: function(data, actions) {
-      console.log(actions)
+      (actions)
       // Authorize the transaction
       return actions.order.authorize()
       .then((response) => {
-          console.log(response)
           this.paid = true
 
           this.$emit('onHigherBid', {amount: this.cartTotal})

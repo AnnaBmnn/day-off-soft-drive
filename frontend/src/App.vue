@@ -123,7 +123,6 @@ export default {
     // `,
   },
   mounted(){
-    console.log('mounted')
     this.getBidAmount()
     window.setInterval(()=> {
       this.getBidAmount()
@@ -186,7 +185,6 @@ export default {
         // and then with the real result of the mutation
         update: () => {
 
-          console.log('upadte')
         },
       }).then(() => {
         // Result
