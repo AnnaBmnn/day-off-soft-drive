@@ -144,7 +144,7 @@ export default {
   }
   .section-hero {
     width: 100%;
-    transform: translate3d(0, 0, 8px);
+    transform: translate3d(1px, 1px, 8px);
   }
   .section-hero__logo {
     width: 80%;
