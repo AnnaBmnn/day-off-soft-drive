@@ -140,6 +140,7 @@ export default {
   }
 }
 @media screen and (max-width: 500px) {
+  
   .section-hero__text {
     margin-top: 80vh;
   }

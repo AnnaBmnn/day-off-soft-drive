@@ -228,6 +228,7 @@ export default {
 @media screen and (max-width: 500px) {
     .threejs {
         z-index: 1;
+        transform: translate3d(0px, 0px,0px);
     }
 }
 </style>

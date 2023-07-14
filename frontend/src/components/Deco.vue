@@ -335,6 +335,9 @@ export default {
 }
 @media not all and (min-resolution:.001dpcm) { 
   @media {
+    .deco {
+      position: absolute;
+    }
     .deco__text {
       backdrop-filter: none;
     }
