@@ -96,4 +96,11 @@ export default {
   }
 
 }
+@media not all and (min-resolution:.001dpcm) { 
+  @media {
+    .section-content {
+      backdrop-filter: none;
+    }
+  }
+}
 </style>
