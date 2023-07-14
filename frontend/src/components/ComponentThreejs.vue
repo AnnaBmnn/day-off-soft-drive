@@ -133,11 +133,12 @@ export default {
                     }
                     this.scene.add(this.gltf)
                 },
-                (progress) =>
+                () =>
                 {
                 },
                 (error) =>
                 {
+                    console.log(`error loading ${error}`)
                 }
             )
         },

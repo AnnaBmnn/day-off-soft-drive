@@ -130,6 +130,7 @@ export default {
       return actions.order.authorize()
       .then((response) => {
           this.paid = true
+          console.log(response)
 
           this.$emit('onHigherBid', {amount: this.cartTotal})
           // Get the authorization id from your payload
