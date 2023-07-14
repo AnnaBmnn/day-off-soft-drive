@@ -217,7 +217,7 @@ export default {
     /* right: 0; */
     z-index: 1;
     width: 50%;
-    transform: translate3d(0, 0, 2px);
+    transform: translate3d(0, 0,3px);
 }
 @media screen and (max-width: 800px) {
     .threejs {
