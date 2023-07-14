@@ -97,7 +97,7 @@ export default {
 }
 
 .window95__header {
-  transform: translate3d(0, 0, 2px);
+  transform: translate3d(0, 0, 100px);
   position: fixed;
   top: -2px;
   left: 0;
@@ -154,7 +154,7 @@ body {
 }
 
 .bar--top {
-  transform: translate3d(0, 0, 2px);
+  transform: translate3d(0, 0, 100px);
   position: fixed;
   top: 0;
   left: 0;
@@ -183,7 +183,7 @@ body {
   background: rgba(126, 126, 126, 1);
 }
 .bar--bottom {
-  transform: translate3d(0, 0, 2px);
+  transform: translate3d(0, 0, 100px);
   position: fixed;
   bottom: 0;
   left: 0;
@@ -220,7 +220,7 @@ body {
   width: 4px;
   z-index: 119;
   background-color: #C3C3C3;
-  transform: translate3d(0, 0, 2px);
+  transform: translate3d(0, 0, 100px);
 
   /* box-shadow:  2px 2px 0px 0px #F0F0F0 inset, -2px -2px 0px 0px #262626 inset; */
 }
@@ -255,7 +255,7 @@ body {
   width: 8px;
   z-index: 119;
   background-color: #C3C3C3;
-  transform: translate3d(0, 0, 2px);
+  transform: translate3d(0, 0, 100px);
   /* box-shadow:  2px 2px 0px 0px #F0F0F0 inset, -2px -2px 0px 0px #262626 inset; */
 }
 .bar--right::before {
