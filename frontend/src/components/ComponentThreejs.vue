@@ -213,7 +213,7 @@ export default {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 100vh!important;
     /* right: 0; */
     z-index: 1;
     width: 50%;
@@ -221,7 +221,7 @@ export default {
 }
 @media screen and (max-width: 800px) {
     .threejs {
-        width: 100%;
+        width: 100%!important;
 
     }
 }
