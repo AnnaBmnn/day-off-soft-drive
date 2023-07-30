@@ -165,9 +165,8 @@ h3 {
   padding: 8px;
   font-family: Helvetica Neue;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 18px;
-  letter-spacing: 0.2em;
   text-align: justify;
   text-transform: uppercase;
   height: 450px;
@@ -183,7 +182,6 @@ h3 {
   text-align: center;
   color: yellow;
   line-height: 22px;
-  letter-spacing: 0.1px;
   -webkit-text-stroke: 1.5px rgb(84, 152, 255);
   text-stroke: 1.5px rgb(84, 152, 255);
 }
@@ -304,7 +302,6 @@ h3 {
   font-size: 32px;
   color: yellow;
   line-height: 22px;
-  letter-spacing: 0.1px;
   -webkit-text-stroke: 1.5px rgb(84, 152, 255);
   text-stroke: 1.5px rgb(84, 152, 255);
 }

@@ -239,7 +239,6 @@ export default {
     font-size: 16px;
     font-weight: 300;
     line-height: 18px;
-    letter-spacing: 0.2em;
     text-align: justify;
     text-transform: uppercase;
     color: white;
