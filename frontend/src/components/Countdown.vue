@@ -64,22 +64,22 @@ export default {
   /* vertical-align: top; */
 }
 .checkout__text--instruction {
-  text-transform: none;
   font-size: 12px;
   display: flex;
   flex-wrap: nowrap;
+  font-weight: 100;
 
 }
 .highlight {
   filter: blur(0.1px);
   font-family: sans-serif;
-  font-weight: 900;
+  font-weight: bold;
   text-transform: uppercase;
   font-size: 32px;
   text-align: center;
   color: yellow;
   line-height: 22px;
-  letter-spacing: 0.1px;
+  /* letter-spacing: 0.1px; */
   -webkit-text-stroke: 1.5px rgb(84, 152, 255);
   text-stroke: 1.5px rgb(84, 152, 255);
 }

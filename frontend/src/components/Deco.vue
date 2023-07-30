@@ -232,8 +232,8 @@ export default {
     left: 5vh;
     z-index: 2;
     transform: rotateZ(-3deg) translate3d(0, 0, 1px);
-    font-family: sans-serif;
-    font-weight: 900;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 500;
     text-transform: uppercase;
     font-size: 24px;
     text-align: center;

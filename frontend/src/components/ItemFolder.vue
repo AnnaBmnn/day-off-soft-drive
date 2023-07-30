@@ -104,7 +104,6 @@ export default {
 }
 .item-folder {
     cursor: pointer;
-    font-family: 'W95FA', Times, serif;
     font-size: 14px;
     text-transform: uppercase;
     width: 15vw;
@@ -236,9 +235,9 @@ export default {
 
 }
 .item-folder__text {
-  font-family: W95FA;
+    font-family: 'Helvetica Neue';
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 18px;
     letter-spacing: 0.2em;
     text-align: justify;

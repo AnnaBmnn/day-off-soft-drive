@@ -116,7 +116,7 @@ export default {
 .window95__title {
   box-sizing: border-box;
   margin: 2px 0;
-  font-family: 'W95FA';
+  font-family: 'Helvetica Neue';
   font-style: normal;
   font-weight: 100;
   font-size: 18px;
@@ -125,7 +125,7 @@ export default {
 }
 
 .window95__button {
-  font-family: 'W95FA';
+  font-family: 'Helvetica Neue';
   width: 24px;
   height: 24px;
   padding: 2px;
@@ -148,7 +148,7 @@ export default {
 }
 
 body {
-  font-family: 'W95FA';
+  font-family: 'Helvetica Neue';
   z-index: 20;
   /* padding: 2px; */
 }

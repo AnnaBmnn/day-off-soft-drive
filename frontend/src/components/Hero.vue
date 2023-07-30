@@ -81,6 +81,7 @@ export default {
   width: 80%;
   margin-right: 10%;
   font-size: 22px;
+  font-weight: 300;
   line-height: 30px;
   text-align: justify;
   mix-blend-mode: difference;

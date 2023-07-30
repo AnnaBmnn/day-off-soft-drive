@@ -206,6 +206,70 @@ export default {
 </script>
 
 <style >
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: local('Helvetica 35 Thin'), local('HelveticaNeue-Thin'),
+        url(~assets/fonts/HelveticaNeue/HelveticaNeue-Thin.woff2) format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: local('Helvetica Neue Italic'), local('HelveticaNeue-Italic'),
+        url(~assets/fonts/HelveticaNeue/HelveticaNeue-Italic.woff2) format('woff2');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: local('Helvetica Neue Bold'), local('HelveticaNeue-Bold'),
+        url(~assets/fonts/HelveticaNeue/HelveticaNeue-Bold.woff2) format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: local('HelveticaNeue Regular'), local('HelveticaNeueRegular'),
+        url('~assets/fonts/HelveticaNeue/HelveticaNeueRegular.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: local('Helvetica Neue Light'), local('HelveticaNeue-Light'),
+        url(~assets/fonts/HelveticaNeue/HelveticaNeue-Light.woff2) format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: local('Helvetica Neue Medium'), local('HelveticaNeue-Medium'),
+        url(~assets/fonts/HelveticaNeue/HelveticaNeue-Medium.woff2) format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: local('Helvetica Neue'), local('HelveticaNeue'),
+        url(~assets/fonts/HelveticaNeue/HelveticaNeue.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 body {
   margin: 0;
   padding: 0;
@@ -236,7 +300,8 @@ div {
   text-shadow: 2px 2px 0px black, -2px -2px 0px black, 0 0 24px white;
 }
 #app {
-  font-family: 'W95FA', Times, serif;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  text-transform: uppercase;
   height: 100vh;
   max-height: 100vh;
   margin: 0;

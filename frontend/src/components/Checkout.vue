@@ -155,15 +155,17 @@ const CLIENT_ID = 'AW58-_beMRQuBpj3JGJNkxiqhbDOFIfPqvjThTrVIzk3ChmWVfzU8jX3wLKf2
 
 <style scoped>
 h3 {
-  font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
+
+  font-weight: 300;
+
 }
 
 .checkout {
   padding: 8px;
-  font-family: W95FA;
+  font-family: Helvetica Neue;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 18px;
   letter-spacing: 0.2em;
   text-align: justify;
@@ -257,12 +259,15 @@ h3 {
 }
 .checkout__text--first {
   width: 72%;
+  text-transform: uppercase;
+  font-weight: 300;
+
 }
 .checkout__date {
   
 }
 .checkout__text--instruction {
-  text-transform: none;
+  font-weight: light;
   font-size: 12px;
 
 }

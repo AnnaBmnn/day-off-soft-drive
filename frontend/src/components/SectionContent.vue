@@ -64,6 +64,9 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    font-family: 'Helvetica Neue';
+    font-size: 16px;
+    font-weight: 300;
 
 }
 @media screen and (max-width: 1100px) {

@@ -185,28 +185,27 @@ export default {
 .card__header {
   cursor: move;
   margin: 0;
-  font-family: 'Times New Roman', Times, serif;
   /* padding: 5px 4px 5px 8px; */
   background: #C4C4C4;
   position: relative;
   z-index: 12;
   display: flex;
+  font-weight: 500;
   justify-content: space-between;
   padding: 2px;
 }
 .card__title {
   margin: 0;
   padding: 5px 4px 5px 8px;
-  font-family: 'Times New Roman', Times, serif;
   font-size: 30px;
   font-size: 14px;
-  font-style: italic;
+  font-weight: 300;
   text-align: left;
 }
 
 .card__button {
   cursor: pointer;
-  font-family: 'W95FA';
+  font-family: 'Helvetica Neue';
   width: 24px;
   height: 24px;
   margin-right: 4px;

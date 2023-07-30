@@ -129,7 +129,7 @@ export default {
   line-height: 3;
   display: block;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 300;
   height: 44px;
   transform: scaleY(4.4);
 }
